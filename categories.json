@@ -2,5 +2,12 @@
   { "name": "Files", "icon": "folder" },
   { "name": "Network", "icon": "globe" },
   { "name": "Media", "icon": "play" },
-  { "name": "Development", "icon": "code" }
+  { "name": "Development", "icon": "code" },
+  { "name": "Cloud", "icon": "cloud" },
+  { "name": "Finance", "icon": "wallet" },
+  { "name": "Games", "icon": "game-controller" },
+  { "name": "Learning", "icon": "school" },
+  { "name": "Notes", "icon": "create" },
+  { "name": "Home Automation", "icon": "house" },
+  { "name": "Utility", "icon": "color-wand" }
 ]
