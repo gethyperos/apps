@@ -1,0 +1,18 @@
+{
+  "App": {
+    "id": "hello-world",
+    "name": "Hello World",
+    "description": "A simple app to say hello",
+    "categories": ["Fun"],
+    "directory": "Example",
+    "icon": "metadata/icon.png"
+  },
+  "Services": {
+    "images": {
+      "x86_64": "hello-world:latest",
+      "arm64": "hello-world:latest",
+      "arm": "hello-world:latest"
+    },
+    "container_name": "hello-world"
+  }
+}

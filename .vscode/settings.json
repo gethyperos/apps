@@ -1,0 +1,24 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "app.json"
+      ],
+      "url": "./schemas/app.schema.json"
+    },
+    {
+      "fileMatch": [
+        "categories.json"
+      ],
+      "url": "./schemas/categories.schema.json"
+    }
+  ],
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/schemas": true,
+    ".vscode": true,
+    "yarn.lock": true,
+    "package-lock.json": true,
+    "index.js": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "repository_template",
+  "version": "0.0.1",
+  "description": "Repository template for VoltaOS",
+  "main": "index.js",
+  "repository": "https://github.com/voltaos/repository_template",
+  "author": "Nodge",
+  "license": "GNU GPL 3",
+  "private": false,
+  "dependencies": {
+    "consola": "^2.15.3",
+    "jsonschema": "^1.4.1"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "validate": "node ./index.js"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1"
+  }
+}
