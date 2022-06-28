@@ -163,26 +163,31 @@
               }
             },
             "devices": {
-              "type": "object",
+              "type": "array",
               "description": "Devices for the container",
-              "properties": {
-                "host": {
-                  "type": "string",
-                  "description": "Path on host",
-                  "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
-                },
-                "container": {
-                  "type": "string",
-                  "description": "Path on container",
-                  "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
-                },
-                "description": {
-                  "type": "string",
-                  "description": "Device description (Used by front-end)"
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "host": {
+                      "type": "string",
+                      "description": "Path on host",
+                      "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                    },
+                    "container": {
+                      "type": "string",
+                      "description": "Path on container",
+                      "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Device description (Used by front-end)"
+                    }
+                  },
+                  "required": ["host", "container"],
+                  "minItems": 1
                 }
-              },
-              "required": ["host", "container"],
-              "minItems": 1
+              ]
             },
             "cap_add": {
               "type": "array",
