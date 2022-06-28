@@ -1,0 +1,54 @@
+{
+  "App": {
+    "id": "prowlarr",
+    "name": "Prowlarr",
+    "description": "prowlarr is a indexer manager/proxy/",
+    "categories": [
+      "Network"
+    ],
+    "icon": "metadata/icon.png",
+    "directory": "prowlarr"
+  },
+  "Services": {
+    "prowlarr": {
+      "container_name": "prowlarr",
+      "images": {
+        "x86_64": "lscr.io/linuxserver/prowlarr:develop",
+        "arm64": "lscr.io/linuxserver/prowlarr:develop",
+        "armhf": "lscr.io/linuxserver/prowlarr:develop"
+      },
+      "ports": [
+        {
+          "host": "9696",
+          "container": "9696",
+          "description": "Web Interface port"
+        }
+      ],
+      "environment": [
+        {
+          "name": "TZ",
+          "value": "America/New_York",
+          "description": "Timezone"
+        },
+        {
+          "name": "PUID",
+          "value": "1000",
+          "description": "User ID"
+        },
+        {
+          "name": "PGID",
+          "value": "1000",
+          "description": "Group ID"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/vltos/configs/prowlarr",
+          "container": "/config",
+          "description": "Config directory"
+        }
+      ],
+      "restart": "unless-stopped"
+    }
+  }
+}
