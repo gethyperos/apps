@@ -2,7 +2,7 @@
 
 This repository contains all official apps for volta.
 
-- Based on the [vltos-repository](https://github.com/voltaOS/vtl-repository) template
+- Based on the [hypr-repository](https://github.com/getHyperOS/hypr-repository) template
 
 Visit the repository for more information about how it works.
 
