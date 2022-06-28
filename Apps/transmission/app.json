@@ -4,7 +4,7 @@
     "name": "Transmission",
     "description": "Transmission is a cross-platform BitTorrent client",
     "categories": [
-      "Files", "Network"
+      "Files", "Torrent"
     ],
     "icon": "metadata/icon.png",
     "directory": "transmission"

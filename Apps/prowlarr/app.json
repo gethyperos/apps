@@ -4,7 +4,7 @@
     "name": "Prowlarr",
     "description": "prowlarr is a indexer manager/proxy/",
     "categories": [
-      "Network"
+      "Torrent"
     ],
     "icon": "metadata/icon.png",
     "directory": "prowlarr"

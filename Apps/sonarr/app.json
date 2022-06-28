@@ -4,7 +4,7 @@
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
     "categories": [
-      "Media"
+      "Media", "Torrent"
     ],
     "icon": "metadata/icon.png",
     "directory": "sonarr"

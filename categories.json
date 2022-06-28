@@ -1,5 +1,6 @@
 [
   { "name": "Files", "icon": "folder" },
+  { "name": "Torrent", "icon": "download" },
   { "name": "Network", "icon": "globe" },
   { "name": "Media", "icon": "play" },
   { "name": "Development", "icon": "code" },
