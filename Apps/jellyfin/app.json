@@ -1,0 +1,83 @@
+{
+  "App": {
+    "id": "jellyfin",
+    "name": "Jellyfin",
+    "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media",
+    "categories": [
+      "Media"
+    ],
+    "icon": "metadata/icon.png",
+    "directory": "jellyfin"
+  },
+  "Services": {
+    "jellyfin": {
+      "images": {
+        "x86_64": "lscr.io/linuxserver/jellyfin:latest",
+        "arm": "lscr.io/linuxserver/jellyfin:latest",
+        "arm64": "lscr.io/linuxserver/jellyfin:latest"
+      },
+      "container_name": "jellyfin",
+      "environment": [{
+          "name": "TZ",
+          "value": "America/New_York",
+          "description": "Timezone"
+        },
+        {
+          "name": "PUID",
+          "value": "1000",
+          "description": "User ID"
+        },
+        {
+          "name": "PGID",
+          "value": "1000",
+          "description": "Group ID"
+        },
+        {
+          "name": "JELLYFIN_PublishedServerUrl",
+          "value": "",
+          "description": "Set the autodiscovery response domain or IP address."
+        }
+      ],
+      "ports": [
+        {
+          "host": "8096",
+          "container": "8096",
+          "protocol": "tcp",
+          "description": "Web Interface port"
+        },
+        {
+          "host": "7359",
+          "container": "7359",
+          "protocol": "udp",
+          "description": "Allows clients to discover Jellyfin on the local network."
+        },
+        {
+          "host": "1900",
+          "container": "1900",
+          "protocol": "udp",
+          "description": "Service discovery used by DNLA and clients."
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/vltos/media/tv",
+          "container": "/tv",
+          "description": "Media directory for tv series"
+        },
+        {
+          "host": "/vltos/media/movie",
+          "container": "/movies",
+          "description": "Media directory for movies"
+        }
+      ],
+      "devices": [
+        {
+          "container": "/dev/dri",
+          "host": "/dev/dri",
+          "description": "Video device for hardware acceleration"
+        }
+      ],
+      "restart": "unless-stopped"
+    }
+  }
+}
