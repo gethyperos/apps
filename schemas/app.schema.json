@@ -121,7 +121,7 @@
               },
               "protocol": {
                 "type": "string",
-                "description": "Protocol (tcp/udp)",
+                "description": "Protocol (tcp/udp) defaults to tcp",
                 "enum": ["tcp", "udp"]
               },
               "description": {
@@ -129,7 +129,7 @@
                 "description": "Port description (Used by front-end)"
               }
             },
-            "required": ["name", "value"],
+            "required": ["host", "container", "description"],
             "minItems": 1
           }
         },
@@ -142,12 +142,12 @@
               "host": {
                 "type": "string",
                 "description": "Path on host",
-                "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
               },
               "container": {
                 "type": "string",
                 "description": "Path on container",
-                "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
               },
               "description": {
                 "type": "string",
@@ -158,7 +158,7 @@
             "minItems": 1
           }
         },
-        "Devices": {
+        "devices": {
           "type": "object",
           "description": "Devices for the container",
           "properties": {
@@ -179,9 +179,83 @@
           },
           "required": ["host", "container"],
           "minItems": 1
+        },
+        "cap_add": {
+          "type": "array",
+          "description": "Capabilities to add to the container",
+          "items": {
+            "type": "string",
+            "description": "Capability name",
+            "pattern": "^[a-zA-Z0-9-_]+$"
+          },
+          "minItems": 1
+        },
+        "cap_drop": {
+          "type": "array",
+          "description": "Capabilities to drop from the container",
+          "items": {
+            "type": "string",
+            "description": "Capability name",
+            "pattern": "^[a-zA-Z0-9-_]+$"
+          },
+          "minItems": 1
+        },
+        "restart": {
+          "type": "string",
+          "description": "Restart policy for the container",
+          "enum": ["no", "always", "on-failure", "unless-stopped"]
+        },
+        "network_mode": {
+          "type": "object",
+          "description": " set service containers network mode.",
+          "properties": {
+            "mode": {
+              "description": "Network mode (must include service name if using service mode)",
+              "enum": ["host", "none", "service"],
+              "type": "string"
+            },
+            "service": {
+              "description": "Service name in case mode = service",
+              "type": "string"
+            }
+          },
+          "required": ["mode"]
+        },
+        "logging": {
+          "type": "object",
+          "description": "logging defines the logging configuration for the service.",
+          "properties": {
+            "driver": {
+              "type": "string",
+              "description": "Logging driver",
+              "enum": ["json-file", "syslog", "journald", "gelf", "fluentd", "fluentbit"]
+            },
+            "options": {
+              "type": "object",
+              "description": "Logging driver options",
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "description": "Logging tag"
+                }
+              },
+              "minItems": 1
+            }
+          },
+          "required": ["driver"]
+        },
+        "security_opt": {
+          "type": "array",
+          "description": "security_opt overrides the default labeling scheme for each container.",
+          "items": {
+            "type": "string",
+            "description": "Security option",
+            "pattern": "^[a-zA-Z0-9-_]+$"
+          },
+          "minItems": 1
         }
       },
-      "required": ["images", "container_name"],
+      "required": ["images", "container_name", "restart"],
       "examples": [{
         "images": {
           "x86_64": "hello-world:latest",
