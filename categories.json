@@ -1,3 +1,6 @@
 [
-
+  { "name": "Files", "icon": "folder" },
+  { "name": "Network", "icon": "globe" },
+  { "name": "Media", "icon": "play" },
+  { "name": "Development", "icon": "code" }
 ]
