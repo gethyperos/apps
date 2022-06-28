@@ -1,0 +1,87 @@
+{
+  "App": {
+    "id": "transmission",
+    "name": "Transmission",
+    "description": "Transmission is a cross-platform BitTorrent client",
+    "categories": [
+      "Files", "Network"
+    ],
+    "icon": "metadata/icon.png",
+    "directory": "transmission"
+  },
+  "Services": {
+    "transmission": {
+      "container_name": "transmission",
+      "images": {
+        "x86_64": "linuxserver/transmission:latest",
+        "armhf": "linuxserver/transmission:armhf-latest",
+        "arm64": "linuxserver/transmission:arm64-latest"
+      },
+      "ports": [
+        { 
+          "container": "9091", 
+          "host": "9091", 
+          "protocol": "tcp", 
+          "description": "Web Interface port" 
+        },
+        { 
+          "container": "51413", 
+          "host": "51413", 
+          "protocol": "tcp", 
+          "description": "Torrent Port TCP" 
+        },
+        { 
+          "container": "51413", 
+          "host": "51413", 
+          "protocol": "udp", 
+          "description": "Torrent Port UDP" 
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/vltos/configs/transmission",
+          "container": "/config",
+          "description": "Config Directory"
+        },
+        {
+          "host": "/vltos/downloads",
+          "container": "/downloads",
+          "description": "Downloads Directory"
+        }
+      ],
+      "environment": [
+        {
+          "name": "TZ",
+          "description": "Timezone",
+          "value": "America/New_York"
+        },
+        {
+          "name": "USER",
+          "description": "Specify an optional username for the interface",
+          "value": "vltos"
+        },
+        {
+          "name": "PASS",
+          "description": "Specify an optional password for the interface",
+          "value": "vltos"
+        },
+        {
+          "name": "HOST_WHITELIST",
+          "description": "Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.",
+          "value": ""
+        },
+        { 
+          "name": "PUID",
+          "description": "Ensure any volume directories on the host are owned by the same user",
+          "value": "1000"
+        },
+        {
+          "name": "PGID",
+          "description": "Ensure any volume directories on the host are owned by the same group",
+          "value": "1000"
+        }
+      ],
+      "restart": "unless-stopped"
+    }
+  }
+}
