@@ -1,4 +1,4 @@
-# VoltaOS Repository
+# HyperOS Repository
 
 This repository contains all official apps for volta.
 
