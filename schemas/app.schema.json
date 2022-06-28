@@ -57,233 +57,243 @@
     "Services": {
       "description": "Docker-compose style services list but expanded to allow Volta customizability",
       "type": "object",
-      "properties": {
-        "images": {
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
           "type": "object",
-          "description": "App Docker images for supported platforms",
+          "description": "Service",
           "properties": {
-            "armhf": {
-              "type": "string",
-              "description": "Arm / ArmHF image"
-            },
-            "arm64": {
-              "type": "string",
-              "description": "Arm64 image"
-            },
-            "x86_64": {
-              "type": "string",
-              "description": "Default image (32/64bit)"
-            }
-          },
-          "required": ["x86_64"]
-        },
-        "container_name": {
-          "type": "string",
-          "description": "Container name, which will be later prefix by vltos-",
-          "pattern": "^[a-zA-Z0-9-_]+$"
-        },
-        "environment": {
-          "type": "array",
-          "description": "Environment variables for the container",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "description": "Environment variable name"
-              },
-              "value": {
-                "type": "string",
-                "description": "Environment variable value"
-              },
-              "description": {
-                "type": "string",
-                "description": "Environment variable description (Used by front-end)"
-              }
-            },
-            "required": ["name", "value"],
-            "minItems": 1
-          }
-        },
-        "ports": {
-          "type": "array",
-          "description": "Ports for the container",
-          "items": {
-            "type": "object",
-            "properties": {
-              "host": {
-                "type": "string",
-                "description": "Port to be exposed on HOST"
-              },
-              "container": {
-                "type": "string",
-                "description": "Port on container"
-              },
-              "protocol": {
-                "type": "string",
-                "description": "Protocol (tcp/udp) defaults to tcp",
-                "enum": ["tcp", "udp"]
-              },
-              "description": {
-                "type": "string",
-                "description": "Port description (Used by front-end)"
-              }
-            },
-            "required": ["host", "container", "description"],
-            "minItems": 1
-          }
-        },
-        "volumes": {
-          "type": "array",
-          "description": "Volume bindings for the container",
-          "items": {
-            "type": "object",
-            "properties": {
-              "host": {
-                "type": "string",
-                "description": "Path on host",
-                "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
-              },
-              "container": {
-                "type": "string",
-                "description": "Path on container",
-                "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
-              },
-              "description": {
-                "type": "string",
-                "description": "Volume description (Used by front-end)"
-              }
-            },
-            "required": ["host", "container"],
-            "minItems": 1
-          }
-        },
-        "devices": {
-          "type": "object",
-          "description": "Devices for the container",
-          "properties": {
-            "host": {
-              "type": "string",
-              "description": "Path on host",
-              "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
-            },
-            "container": {
-              "type": "string",
-              "description": "Path on container",
-              "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
-            },
-            "description": {
-              "type": "string",
-              "description": "Device description (Used by front-end)"
-            }
-          },
-          "required": ["host", "container"],
-          "minItems": 1
-        },
-        "cap_add": {
-          "type": "array",
-          "description": "Capabilities to add to the container",
-          "items": {
-            "type": "string",
-            "description": "Capability name",
-            "pattern": "^[a-zA-Z0-9-_]+$"
-          },
-          "minItems": 1
-        },
-        "cap_drop": {
-          "type": "array",
-          "description": "Capabilities to drop from the container",
-          "items": {
-            "type": "string",
-            "description": "Capability name",
-            "pattern": "^[a-zA-Z0-9-_]+$"
-          },
-          "minItems": 1
-        },
-        "restart": {
-          "type": "string",
-          "description": "Restart policy for the container",
-          "enum": ["no", "always", "on-failure", "unless-stopped"]
-        },
-        "network_mode": {
-          "type": "object",
-          "description": " set service containers network mode.",
-          "properties": {
-            "mode": {
-              "description": "Network mode (must include service name if using service mode)",
-              "enum": ["host", "none", "service"],
-              "type": "string"
-            },
-            "service": {
-              "description": "Service name in case mode = service",
-              "type": "string"
-            }
-          },
-          "required": ["mode"]
-        },
-        "logging": {
-          "type": "object",
-          "description": "logging defines the logging configuration for the service.",
-          "properties": {
-            "driver": {
-              "type": "string",
-              "description": "Logging driver",
-              "enum": ["json-file", "syslog", "journald", "gelf", "fluentd", "fluentbit"]
-            },
-            "options": {
+            "images": {
               "type": "object",
-              "description": "Logging driver options",
+              "description": "App Docker images for supported platforms",
               "properties": {
-                "tag": {
+                "armhf": {
                   "type": "string",
-                  "description": "Logging tag"
+                  "description": "Arm / ArmHF image"
+                },
+                "arm64": {
+                  "type": "string",
+                  "description": "Arm64 image"
+                },
+                "x86_64": {
+                  "type": "string",
+                  "description": "Default image (32/64bit)"
                 }
+              },
+              "required": ["x86_64"]
+            },
+            "container_name": {
+              "type": "string",
+              "description": "Container name, which will be later prefix by vltos-",
+              "pattern": "^[a-zA-Z0-9-_]+$"
+            },
+            "environment": {
+              "type": "array",
+              "description": "Environment variables for the container",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Environment variable name"
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "Environment variable value"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Environment variable description (Used by front-end)"
+                  }
+                },
+                "required": ["name", "value"],
+                "minItems": 1
+              }
+            },
+            "ports": {
+              "type": "array",
+              "description": "Ports for the container",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "host": {
+                    "type": "string",
+                    "description": "Port to be exposed on HOST"
+                  },
+                  "container": {
+                    "type": "string",
+                    "description": "Port on container"
+                  },
+                  "protocol": {
+                    "type": "string",
+                    "description": "Protocol (tcp/udp) defaults to tcp",
+                    "enum": ["tcp", "udp"]
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Port description (Used by front-end)"
+                  }
+                },
+                "required": ["host", "container", "description"],
+                "minItems": 1
+              }
+            },
+            "volumes": {
+              "type": "array",
+              "description": "Volume bindings for the container",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "host": {
+                    "type": "string",
+                    "description": "Path on host",
+                    "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
+                  },
+                  "container": {
+                    "type": "string",
+                    "description": "Path on container",
+                    "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Volume description (Used by front-end)"
+                  }
+                },
+                "required": ["host", "container"],
+                "minItems": 1
+              }
+            },
+            "devices": {
+              "type": "object",
+              "description": "Devices for the container",
+              "properties": {
+                "host": {
+                  "type": "string",
+                  "description": "Path on host",
+                  "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                },
+                "container": {
+                  "type": "string",
+                  "description": "Path on container",
+                  "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))(([a-zA-Z0-9]+/{1})+)([a-zA-Z0-9])+$"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Device description (Used by front-end)"
+                }
+              },
+              "required": ["host", "container"],
+              "minItems": 1
+            },
+            "cap_add": {
+              "type": "array",
+              "description": "Capabilities to add to the container",
+              "items": {
+                "type": "string",
+                "description": "Capability name",
+                "pattern": "^[a-zA-Z0-9-_]+$"
+              },
+              "minItems": 1
+            },
+            "cap_drop": {
+              "type": "array",
+              "description": "Capabilities to drop from the container",
+              "items": {
+                "type": "string",
+                "description": "Capability name",
+                "pattern": "^[a-zA-Z0-9-_]+$"
+              },
+              "minItems": 1
+            },
+            "restart": {
+              "type": "string",
+              "description": "Restart policy for the container",
+              "enum": ["no", "always", "on-failure", "unless-stopped"]
+            },
+            "network_mode": {
+              "type": "object",
+              "description": " set service containers network mode.",
+              "properties": {
+                "mode": {
+                  "description": "Network mode (must include service name if using service mode)",
+                  "enum": ["host", "none", "service"],
+                  "type": "string"
+                },
+                "service": {
+                  "description": "Service name in case mode = service",
+                  "type": "string"
+                }
+              },
+              "required": ["mode"]
+            },
+            "logging": {
+              "type": "object",
+              "description": "logging defines the logging configuration for the service.",
+              "properties": {
+                "driver": {
+                  "type": "string",
+                  "description": "Logging driver",
+                  "enum": ["json-file", "syslog", "journald", "gelf", "fluentd", "fluentbit"]
+                },
+                "options": {
+                  "type": "object",
+                  "description": "Logging driver options",
+                  "properties": {
+                    "tag": {
+                      "type": "string",
+                      "description": "Logging tag"
+                    }
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": ["driver"]
+            },
+            "security_opt": {
+              "type": "array",
+              "description": "security_opt overrides the default labeling scheme for each container.",
+              "items": {
+                "type": "string",
+                "description": "Security option",
+                "pattern": "^[a-zA-Z0-9-_]+$"
               },
               "minItems": 1
             }
           },
-          "required": ["driver"]
-        },
-        "security_opt": {
-          "type": "array",
-          "description": "security_opt overrides the default labeling scheme for each container.",
-          "items": {
-            "type": "string",
-            "description": "Security option",
-            "pattern": "^[a-zA-Z0-9-_]+$"
-          },
-          "minItems": 1
+          "required": ["images", "container_name", "restart"]
         }
       },
-      "required": ["images", "container_name", "restart"],
       "examples": [{
-        "images": {
-          "x86_64": "hello-world:latest",
-          "armhf": "hello-world:latest",
-          "arm64": "hello-world:latest"
+        "service": {
+          "images": {
+            "x86_64": "hello-world:latest",
+            "armhf": "hello-world:latest",
+            "arm64": "hello-world:latest"
+          },
+          "container_name": "container_name",
+          "environment": [{
+            "name": "DISPLAY_NAME",
+            "value": "Hello World",
+            "description": "Name to be displayed on webUI"
+          }],
+          "ports": [{
+            "host": "8080",
+            "container": "8080",
+            "protocol": "tcp",
+            "description": "Port used by WebUI"
+          }],
+          "volumes": [{
+            "host": "/var/www/html",
+            "container": "/var/www/html",
+            "description": "Place to save our hello world's"
+          }],
+          "devices": [{
+            "host": "/dev/dri",
+            "container": "/dev/dri",
+            "description": "GPU Device for hardware acceleration"
+          }]
         },
-        "container_name": "helloworld",
-        "environment": [{
-          "name": "DISPLAY_NAME",
-          "value": "Hello World",
-          "description": "Name to be displayed on webUI"
-        }],
-        "ports": [{
-          "host": "8080",
-          "container": "8080",
-          "protocol": "tcp",
-          "description": "Port used by WebUI"
-        }],
-        "volumes": [{
-          "host": "/var/www/html",
-          "container": "/var/www/html",
-          "description": "Place to save our hello world's"
-        }],
-        "devices": [{
-          "host": "/dev/dri",
-          "container": "/dev/dri",
-          "description": "GPU Device for hardware acceleration"
-        }]
+        "additionalProperties": false,
+        "minProperties": 1
       }]
     }
   },
