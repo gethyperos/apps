@@ -1,0 +1,62 @@
+{
+  "App": {
+    "id": "Sonarr",
+    "name": "Sonarr",
+    "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
+    "categories": [
+      "Media"
+    ],
+    "icon": "metadata/icon.png",
+    "directory": "sonarr"
+  },
+  "Services": {
+    "sonarr": {
+      "images": {
+        "arm64": "linuxserver/sonarr:arm64-latest",
+        "armhf": "linuxserver/sonarr:armhf-latest",
+        "x86_64": "linuxserver/sonarr:latest"
+      },
+      "container_name": "sonarr",
+      "ports": [{
+        "container": "8989",
+        "host": "8989",
+        "description": "Web Interface port"
+      }],
+      "volumes": [
+        {
+          "host": "/vltos/configs/sonarr",
+          "container": "/config",
+          "description": "Config directory"
+        },
+        {
+          "host": "/vltos/media/tv",
+          "container": "/tv",
+          "description": "Media directory"
+        },
+        {
+          "host": "/vltos/downloads",
+          "container": "/downloads",
+          "description": "Download directory (The same as your torrent client)"
+        }
+      ],
+      "environment": [
+        {
+          "name": "TZ",
+          "value": "America/New_York",
+          "description": "Timezone"
+        },
+        {
+          "name": "PUID",
+          "value": "1000",
+          "description": "User ID"
+        },
+        {
+          "name": "PGID",
+          "value": "1000",
+          "description": "Group ID"
+        }
+      ],
+      "restart": "unless-stopped"
+    }
+  }
+}
