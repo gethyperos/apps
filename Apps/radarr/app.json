@@ -1,0 +1,87 @@
+{
+  "name": "Radarr",
+  "description": "Transmission is an open source, volunteer-based BitTorrent client",
+  "webPort": "$options.webPort$",
+  "id": "radarr",
+  "categories": [
+    "media"
+  ],
+  "packageAuthor": "linuxserver.io",
+  "author": "Fapy",
+  "repository": "https://hub.docker.com/r/linuxserver/radarr",
+  "image": "metadata/icon.png",
+  "options": {
+    "webPort": {
+      "name": "Web Port",
+      "type": "string",
+      "default": "7878",
+      "description": "Web UI port."
+    },
+    "PUID": {
+      "name": "UserID",
+      "type": "number",
+      "default": "1000",
+      "description": "UserID used by container"
+    },
+    "PGID": {
+      "name": "GroupID",
+      "type": "number",
+      "default": "1000",
+      "description": "GroupID used by container"
+    },
+    "timezone": {
+      "name": "Timezone",
+      "type": "string",
+      "default": "Eruope/London",
+      "description": "Specify an optional timezone."
+    },
+    "downloadspath": {
+      "name": "Downloads directory",
+      "type": "path",
+      "default": "/voltaos/data/downloads",
+      "description": "Local path for downloads."
+    },
+    "configspath": {
+      "name": "Config directory",
+      "type": "path",
+      "default": "/voltaos/configs/radarr",
+      "description": "Where radarr should store config files and logs."
+    },
+    "movies": {
+      "name": "TV Series path",
+      "type": "path",
+      "default": "/voltaos/data/media/movies",
+      "description": "Location where radarr will attempt to move successfully downloaded series"
+    },
+    "downloads": {
+      "name": "Downloads path",
+      "type": "path",
+      "default": "/voltaos/data/downloads",
+      "description": "Location of download managers output directory"
+    }
+  },
+  "compose": {
+    "services": {
+      "transmission": {
+        "image": "lscr.io/linuxserver/radarr:latest",
+        "arm64Image": "lscr.io/linuxserver/radarr:arm64v8-latest",
+        "armhfImage": "lscr.io/linuxserver/radarr:arm32v7-latest",
+        "container_name": "vltos-radarr",
+        "ports": [
+          "$options.webPort$:7878"
+        ],
+        "environment": [
+          "PUID=$options.PUID$",
+          "PGID=$options.PGID$",
+          "TIMEZONE=$options.timezone$"
+        ],
+        "volumes": [
+          "$options.configspath$:/config",
+          "$options.downloadspath$:/downloads",
+          "$options.movies$:/tv"
+        ],
+        "restart": "unless-stopped"
+      }
+    }
+  }
+}
