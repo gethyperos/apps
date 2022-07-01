@@ -53,7 +53,7 @@
         {
           "name": "TZ",
           "description": "Timezone",
-          "value": "America/New_York"
+          "value": " Europe/London"
         },
         {
           "name": "USER",
