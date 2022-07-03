@@ -1,9 +1,44 @@
 [
   {
-    "id": "hello-world",
-    "name": "Hello World",
-    "description": "A simple app to say hello",
-    "directory": "Example",
+    "id": "deluge",
+    "name": "Deluge",
+    "description": "Deluge is a cross-platform BitTorrent client",
+    "directory": "deluge",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "jellyfin",
+    "name": "Jellyfin",
+    "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media",
+    "directory": "jellyfin",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "photoprism",
+    "name": "PhotoPrism",
+    "description": "PhotoPrism® is an AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud. ",
+    "directory": "welcome",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "prowlarr",
+    "name": "Prowlarr",
+    "description": "prowlarr is a indexer manager/proxy/",
+    "directory": "prowlarr",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "Sonarr",
+    "name": "Sonarr",
+    "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
+    "directory": "sonarr",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "transmission",
+    "name": "Transmission",
+    "description": "Transmission is a cross-platform BitTorrent client",
+    "directory": "transmission",
     "icon": "metadata/icon.png"
   }
 ]

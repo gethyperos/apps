@@ -175,14 +175,11 @@
             ]
         },
         "mariadb": {
+            "container_name": "mariadb",
             "restart": "unless-stopped",
             "images": {
                 "x86_64": "mariadb:10.6",
                 "arm64": "mariadb:10.6"
-            },
-            "security_opt": {
-                "seccomp": "unconfined",
-                "apparmor": "unconfined"
             },
             "command": "mysqld --innodb-buffer-pool-size=512M --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120",
             "environment": [
