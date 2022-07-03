@@ -7,7 +7,7 @@
             "Media"
         ],
         "icon": "metadata/icon.png",
-        "directory": "welcome"
+        "directory": "photoprism"
     },
     "Services": {
         "photoprism": {
