@@ -1,12 +1,12 @@
 {
-  "$id": "https://github.com/voltaos/repoTemplate/tree/master/schemas/app.schema.json",
+  "$id": "https://github.com/gethyperos/hypr-repository/tree/master/schemas/app.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "App",
   "type": "object",
   "properties": {
     "App": {
       "type": "object",
-      "description": "VoltaOS App specifications",
+      "description": "HyperOS App specifications",
       "properties": {
         "id": {
           "type": "string",
@@ -19,7 +19,7 @@
         },
         "icon": {
           "type": "string",
-          "description": "App Icon name",
+          "description": "App Icon file (relative to app.json)",
           "pattern": ".*\\.(webp|png|gif)"
         },
         "description": {
@@ -38,21 +38,28 @@
         },
         "directory": {
           "type": "string",
-          "description": "App directory name inside voltaos/repository/Apps (Usually the app name)",
+          "description": "Directory name where this app.json is located (Usually the app name)",
           "pattern": "^[a-zA-Z0-9-_]+$"
         }
       },
-      "required": ["id", "name", "description", "categories", "icon", "directory"],
-      "examples": [{
-        "id": "welcome",
-        "name": "VoltaOS Example app",
-        "description": "VoltaOS App Template",
-        "categories": [
-          "example"
-        ],
-        "icon": "example.png",
-        "directory": "welcome"
-      }]
+      "required": [
+        "id",
+        "name",
+        "description",
+        "categories",
+        "icon",
+        "directory"
+      ],
+      "examples": [
+        {
+          "id": "welcome",
+          "name": "HyperOS Example app",
+          "description": "HyperOS App Template",
+          "categories": ["example"],
+          "icon": "example.png",
+          "directory": "welcome"
+        }
+      ]
     },
     "Services": {
       "description": "Docker-compose style services list but expanded to allow Volta customizability",
@@ -146,12 +153,12 @@
                   "host": {
                     "type": "string",
                     "description": "Path on host",
-                    "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
+                    "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))([a-zA-Z0-9])+$"
                   },
                   "container": {
                     "type": "string",
                     "description": "Path on container",
-                    "pattern": "((\\.{2}\/{1})+|((\\.{1}\/{1})?)|(\/{1}))([a-zA-Z0-9])+$"
+                    "pattern": "((\\.{2}/{1})+|((\\.{1}/{1})?)|(/{1}))([a-zA-Z0-9])+$"
                   },
                   "description": {
                     "type": "string",
@@ -237,7 +244,14 @@
                 "driver": {
                   "type": "string",
                   "description": "Logging driver",
-                  "enum": ["json-file", "syslog", "journald", "gelf", "fluentd", "fluentbit"]
+                  "enum": [
+                    "json-file",
+                    "syslog",
+                    "journald",
+                    "gelf",
+                    "fluentd",
+                    "fluentbit"
+                  ]
                 },
                 "options": {
                   "type": "object",
@@ -264,42 +278,52 @@
               "minItems": 1
             }
           },
-          "required": ["images", "container_name", "restart"]
+          "required": ["images", "container_name", "restart"],
+          "minProperties": 1,
+          "additionalProperties": false
         }
       },
-      "examples": [{
-        "service": {
-          "images": {
-            "x86_64": "hello-world:latest",
-            "armhf": "hello-world:latest",
-            "arm64": "hello-world:latest"
-          },
-          "container_name": "container_name",
-          "environment": [{
-            "name": "DISPLAY_NAME",
-            "value": "Hello World",
-            "description": "Name to be displayed on webUI"
-          }],
-          "ports": [{
-            "host": "8080",
-            "container": "8080",
-            "protocol": "tcp",
-            "description": "Port used by WebUI"
-          }],
-          "volumes": [{
-            "host": "/var/www/html",
-            "container": "/var/www/html",
-            "description": "Place to save our hello world's"
-          }],
-          "devices": [{
-            "host": "/dev/dri",
-            "container": "/dev/dri",
-            "description": "GPU Device for hardware acceleration"
-          }]
-        },
-        "additionalProperties": false,
-        "minProperties": 1
-      }]
+      "examples": [
+        {
+          "myapp": {
+            "images": {
+              "x86_64": "myapp:latest",
+              "armhf": "myapp:latest",
+              "arm64": "myapp:latest"
+            },
+            "container_name": "myapp_container_name",
+            "environment": [
+              {
+                "name": "variable_name",
+                "value": "variable_value",
+                "description": "Description of what this env does"
+              }
+            ],
+            "ports": [
+              {
+                "host": "8080",
+                "container": "8080",
+                "protocol": "tcp",
+                "description": "description of what this port is for"
+              }
+            ],
+            "volumes": [
+              {
+                "host": "/path/on/host",
+                "container": "/path/on/container",
+                "description": "Description of what is this volume for"
+              }
+            ],
+            "devices": [
+              {
+                "host": "/dev/dri",
+                "container": "/dev/dri",
+                "description": "GPU Device for hardware acceleration"
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   "required": ["App", "Services"]
