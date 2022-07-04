@@ -74,6 +74,13 @@
     ]
   },
   {
+    "id": "radarr",
+    "name": "Radarr",
+    "description": "Radarr is a movie collection manager",
+    "directory": "radarr",
+    "icon": "metadata/icon.png"
+  },
+  {
     "id": "Sonarr",
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
