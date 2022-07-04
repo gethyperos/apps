@@ -64,13 +64,25 @@ function generateAppIndex() {
         process.exit(1)
       }
 
+      try {
+        fs.readFileSync(`Apps/${path}/${appManifest.App.icon}`)
+      } catch (e) {
+        console.warn(`App "${appManifest.App.name}" has invalid icon path!
+        ${appManifest.App.icon} (Icon not found)
+        Missing icon doesn\'t prevent your app from validating, but it won\'t be merged.`
+        )
+      }
+
       UniqueIds.push(appManifest.App.id)
       Apps.push({
         id: appManifest.App.id,
         name: appManifest.App.name,
         description: appManifest.App.description,
-        directory: appManifest.App.directory,
-        icon: appManifest.App.icon
+        directory: path,
+        icon: `Apps/${path}/${appManifest.App.icon}`,
+        manifest: `Apps/${path}/app.json`,
+        metadata: `Apps/${path}/metadata/app.md`,
+        categories: appManifest.App.categories
       })
 
       if (validationResult.errors.length > 0) {

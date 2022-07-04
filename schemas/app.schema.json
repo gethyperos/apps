@@ -11,7 +11,7 @@
         "id": {
           "type": "string",
           "description": "App Unique Identifier",
-          "patter": "^[a-zA-Z0-9-_]+$"
+          "patter": "^[a-z0-9-_]+$"
         },
         "name": {
           "type": "string",
@@ -280,6 +280,14 @@
             "command": {
               "type": "string",
               "description": "Overrides the command executed on container start-up"
+            },
+            "depends_on": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "Expresses startup and shutdown dependencies between services (the name must match the service key).",
+                "pattern": "^[a-zA-Z0-9_-]+$"
+              }
             }
           },
           "required": ["images", "container_name", "restart"],

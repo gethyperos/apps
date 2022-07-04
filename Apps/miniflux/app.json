@@ -1,0 +1,82 @@
+{ 
+    "App": {
+    "id": "miniflux",
+    "name": "Miniflux",
+    "description": "Miniflux is a minimalist and opinionated feed reader.",
+    "categories": [
+        "Media",
+        "Reading"
+    ],
+    "icon": "metadata/icon.png",
+    "directory": "miniflux"
+    },
+        "Services": {
+        "miniflux": {
+            "restart": "unless-stopped",
+            "images": {
+                "x86_64": "miniflux/miniflux:latest",
+                "armhf": "miniflux/miniflux:latest",
+                "arm64": "miniflux/miniflux:latest"
+            },
+            "container_name": "miniflux",
+            "depends_on": [
+                "miniflux_db"
+            ],
+            "environment": [
+                {
+                    "name": "DATABASE_URL",
+                    "value": "postgres://miniflux:secret@db/miniflux?sslmode=disable"
+                },
+                {
+                    "name": "RUN_MIGRATIONS",
+                    "value": "1"
+                },
+                {
+                    "name": "CREATE_ADMIN",
+                    "value": "1"
+                },
+                {
+                    "name": "ADMIN_USERNAME",
+                    "value": "hyperos"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "value": "hyperos"
+                }
+            ],
+            "ports": [
+                {
+                    "host": "1080",
+                    "container": "8080",
+                    "protocol": "tcp",
+                    "description": "Port used by WebUI"
+                }
+            ]
+        },
+        "miniflux_db": {
+            "restart": "unless-stopped",
+            "images": {
+                "x86_64": "postgres:latest",
+                "armhf": "postgres:latest",
+                "arm64": "postgres:latest"
+            },
+            "container_name": "miniflux_db",
+            "environment": [
+                {
+                    "name": "POSTGRES_USER",
+                    "value": "miniflux"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "value": "hyperos"
+                }
+            ],
+            "volumes": [
+                {
+                    "container": "miniflux-db",
+                    "host": "/var/lib/postgresql/data"
+                }
+            ]
+        }
+    }
+}

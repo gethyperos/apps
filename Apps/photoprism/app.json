@@ -172,10 +172,11 @@
                     "container": "/photoprism/storage",
                     "description": "*writable* storage folder for cache, database, and sidecar files (never remove)"
                 }
-            ]
+            ],
+            "depends_on": ["photoprism_mariadb"]
         },
-        "mariadb": {
-            "container_name": "mariadb",
+        "photoprism_mariadb": {
+            "container_name": "photoprism_mariadb",
             "restart": "unless-stopped",
             "images": {
                 "x86_64": "mariadb:10.6",

@@ -4,35 +4,92 @@
     "name": "Deluge",
     "description": "Deluge is a cross-platform BitTorrent client",
     "directory": "deluge",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/deluge/metadata/icon.png",
+    "manifest": "Apps/deluge/app.json",
+    "metadata": "Apps/deluge/metadata/app.md",
+    "categories": [
+      "Files",
+      "Torrent"
+    ]
   },
   {
     "id": "jellyfin",
     "name": "Jellyfin",
     "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media",
     "directory": "jellyfin",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/jellyfin/metadata/icon.png",
+    "manifest": "Apps/jellyfin/app.json",
+    "metadata": "Apps/jellyfin/metadata/app.md",
+    "categories": [
+      "Media"
+    ]
+  },
+  {
+    "id": "linkding",
+    "name": "linkding",
+    "description": "Self-hosted bookmark service",
+    "directory": "linkding",
+    "icon": "Apps/linkding/metadata/icon.png",
+    "manifest": "Apps/linkding/app.json",
+    "metadata": "Apps/linkding/metadata/app.md",
+    "categories": [
+      "Reading"
+    ]
+  },
+  {
+    "id": "miniflux",
+    "name": "Miniflux",
+    "description": "Miniflux is a minimalist and opinionated feed reader.",
+    "directory": "miniflux",
+    "icon": "Apps/miniflux/metadata/icon.png",
+    "manifest": "Apps/miniflux/app.json",
+    "metadata": "Apps/miniflux/metadata/app.md",
+    "categories": [
+      "Media",
+      "Reading"
+    ]
   },
   {
     "id": "photoprism",
     "name": "PhotoPrism",
-    "description": "AI-Powered Photos App for the Decentralized Web.",
-
+    "description": "AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way.",
     "directory": "photoprism",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/photoprism/metadata/icon.png",
+    "manifest": "Apps/photoprism/app.json",
+    "metadata": "Apps/photoprism/metadata/app.md",
+    "categories": [
+      "Media"
+    ]
   },
   {
     "id": "pihole",
     "name": "Pi-hole",
     "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
     "directory": "pihole",
-    "icon": "metadata/icons.png"
+    "icon": "Apps/pihole/metadata/icon.png",
+    "manifest": "Apps/pihole/app.json",
+    "metadata": "Apps/pihole/metadata/app.md",
+    "categories": [
+      "Network"
+    ]
   },
   {
     "id": "prowlarr",
     "name": "Prowlarr",
     "description": "prowlarr is a indexer manager/proxy/",
     "directory": "prowlarr",
+    "icon": "Apps/prowlarr/metadata/icon.png",
+    "manifest": "Apps/prowlarr/app.json",
+    "metadata": "Apps/prowlarr/metadata/app.md",
+    "categories": [
+      "Torrent"
+    ]
+  },
+  {
+    "id": "radarr",
+    "name": "Radarr",
+    "description": "Radarr is a movie collection manager",
+    "directory": "radarr",
     "icon": "metadata/icon.png"
   },
   {
@@ -40,13 +97,25 @@
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
     "directory": "sonarr",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/sonarr/metadata/icon.png",
+    "manifest": "Apps/sonarr/app.json",
+    "metadata": "Apps/sonarr/metadata/app.md",
+    "categories": [
+      "Media",
+      "Torrent"
+    ]
   },
   {
     "id": "transmission",
     "name": "Transmission",
     "description": "Transmission is a cross-platform BitTorrent client",
     "directory": "transmission",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/transmission/metadata/icon.png",
+    "manifest": "Apps/transmission/app.json",
+    "metadata": "Apps/transmission/metadata/app.md",
+    "categories": [
+      "Files",
+      "Torrent"
+    ]
   }
 ]
