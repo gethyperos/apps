@@ -15,4 +15,4 @@ jobs:
       - uses: gacts/purge-jsdelivr-cache@v1
         with:
           url: |
-            https://cdn.jsdelivr.net/gethyperos/apps@master/index.json
+            https://cdn.jsdelivr.net/gh/gethyperos/apps@master/index.json
