@@ -4,11 +4,13 @@
         "name": "Radarr",
         "description": "Radarr is a movie collection manager",
         "categories": [
-            "Media", "Torrent"
+            "Media",
+            "Torrent"
         ],
         "icon": "metadata/icon.png",
         "directory": "radarr"
-    },"Services": {
+    },
+    "Services": {
         "radarr": {
             "images": {
                 "x86_64": "linuxserver/radarr:nightly",
