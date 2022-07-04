@@ -1,14 +1,13 @@
 [
   {
-    "id": "deluge",
-    "name": "Deluge",
-    "description": "Deluge is a cross-platform BitTorrent client",
-    "directory": "deluge",
-    "icon": "Apps/deluge/metadata/icon.png",
-    "manifest": "Apps/deluge/app.json",
-    "metadata": "Apps/deluge/metadata/app.md",
+    "id": "prowlarr",
+    "name": "Prowlarr",
+    "description": "prowlarr is a indexer manager/proxy/",
+    "directory": "prowlarr",
+    "icon": "Apps/prowlarr/metadata/icon.png",
+    "manifest": "Apps/prowlarr/app.json",
+    "metadata": "Apps/prowlarr/metadata/app.md",
     "categories": [
-      "Files",
       "Torrent"
     ]
   },
@@ -25,6 +24,32 @@
     ]
   },
   {
+    "id": "transmission",
+    "name": "Transmission",
+    "description": "Transmission is a cross-platform BitTorrent client",
+    "directory": "transmission",
+    "icon": "Apps/transmission/metadata/icon.png",
+    "manifest": "Apps/transmission/app.json",
+    "metadata": "Apps/transmission/metadata/app.md",
+    "categories": [
+      "Files",
+      "Torrent"
+    ]
+  },
+  {
+    "id": "deluge",
+    "name": "Deluge",
+    "description": "Deluge is a cross-platform BitTorrent client",
+    "directory": "deluge",
+    "icon": "Apps/deluge/metadata/icon.png",
+    "manifest": "Apps/deluge/app.json",
+    "metadata": "Apps/deluge/metadata/app.md",
+    "categories": [
+      "Files",
+      "Torrent"
+    ]
+  },
+  {
     "id": "photoprism",
     "name": "PhotoPrism",
     "description": "AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way.",
@@ -34,30 +59,6 @@
     "metadata": "Apps/photoprism/metadata/app.md",
     "categories": [
       "Media"
-    ]
-  },
-  {
-    "id": "pihole",
-    "name": "Pi-hole",
-    "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
-    "directory": "pihole",
-    "icon": "Apps/pihole/metadata/icons.png",
-    "manifest": "Apps/pihole/app.json",
-    "metadata": "Apps/pihole/metadata/app.md",
-    "categories": [
-      "Network"
-    ]
-  },
-  {
-    "id": "prowlarr",
-    "name": "Prowlarr",
-    "description": "prowlarr is a indexer manager/proxy/",
-    "directory": "prowlarr",
-    "icon": "Apps/prowlarr/metadata/icon.png",
-    "manifest": "Apps/prowlarr/app.json",
-    "metadata": "Apps/prowlarr/metadata/app.md",
-    "categories": [
-      "Torrent"
     ]
   },
   {
@@ -74,16 +75,15 @@
     ]
   },
   {
-    "id": "transmission",
-    "name": "Transmission",
-    "description": "Transmission is a cross-platform BitTorrent client",
-    "directory": "transmission",
-    "icon": "Apps/transmission/metadata/icon.png",
-    "manifest": "Apps/transmission/app.json",
-    "metadata": "Apps/transmission/metadata/app.md",
+    "id": "pihole",
+    "name": "Pi-hole",
+    "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
+    "directory": "pihole",
+    "icon": "Apps/pihole/metadata/icons.png",
+    "manifest": "Apps/pihole/app.json",
+    "metadata": "Apps/pihole/metadata/app.md",
     "categories": [
-      "Files",
-      "Torrent"
+      "Network"
     ]
   }
 ]
