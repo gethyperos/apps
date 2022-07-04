@@ -43,7 +43,7 @@
       ],
       "volumes": [
         {
-          "host": "/vltos/configs/prowlarr",
+          "host": "/hypros/configs/prowlarr",
           "container": "/config",
           "description": "Config directory"
         }

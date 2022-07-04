@@ -39,12 +39,12 @@
       ],
       "volumes": [
         {
-          "host": "/vltos/configs/deluge",
+          "host": "/hypros/configs/deluge",
           "container": "/config",
           "description": "Config Directory"
         },
         {
-          "host": "/vltos/downloads",
+          "host": "/hypros/downloads",
           "container": "/downloads",
           "description": "Downloads Directory"
         }
