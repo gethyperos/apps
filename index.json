@@ -1,9 +1,23 @@
 [
   {
+    "id": "deluge",
+    "name": "Deluge",
+    "description": "Deluge is a cross-platform BitTorrent client",
+    "directory": "deluge",
+    "icon": "metadata/icon.png"
+  },
+  {
     "id": "jellyfin",
     "name": "Jellyfin",
     "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media",
     "directory": "jellyfin",
+    "icon": "metadata/icon.png"
+  },
+  {
+    "id": "photoprism",
+    "name": "PhotoPrism",
+    "description": "AI-Powered Photos App for the Decentralized Web.",
+    "directory": "photoprism",
     "icon": "metadata/icon.png"
   },
   {

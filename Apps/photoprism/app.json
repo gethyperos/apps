@@ -1,0 +1,220 @@
+{
+    "App": {
+        "id": "photoprism",
+        "name": "PhotoPrism",
+        "description": "AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way.",
+        "categories": [
+            "Media"
+        ],
+        "icon": "metadata/icon.png",
+        "directory": "photoprism"
+    },
+    "Services": {
+        "photoprism": {
+            "restart": "unless-stopped",
+            "images": {
+                "x86_64": "photoprism/photoprism:latest",
+                "arm64": "photoprism/photoprism:latest"
+            },
+            "container_name": "photoprism",
+            "environment": [
+                {
+                    "name": "PHOTOPRISM_ADMIN_PASSWORD",
+                    "value": "insecure",
+                    "description": "YOUR INITIAL ADMIN PASSWORD (MINIMUM 8 CHARACTERS, USERNAME admin)"
+                },
+                {
+                    "name": "PHOTOPRISM_SITE_URL",
+                    "value": "http://localhost:2342/",
+                    "description": "public server URL incl http:// or https:// and /path, :port is optional"
+                },
+                {
+                    "name": "PHOTOPRISM_ORIGINALS_LIMIT",
+                    "value": "5000",
+                    "description": "file size limit for originals in MB (increase for high-res video)"
+                },
+                {
+                    "name": "PHOTOPRISM_HTTP_COMPRESSION",
+                    "value": "gzip",
+                    "description": "improves transfer speed and bandwidth utilization (none or gzip)"
+                },
+                {
+                    "name": "PHOTOPRISM_LOG_LEVEL",
+                    "value": "info",
+                    "description": "log level: trace, debug, info, warning, error, fatal, or panic"
+                },
+                {
+                    "name": "PHOTOPRISM_PUBLIC",
+                    "value": "false",
+                    "description": "no authentication required (disables password protection)"
+                },
+                {
+                    "name": "PHOTOPRISM_READONLY",
+                    "value": "false",
+                    "description": "do not modify originals directory (reduced functionality)"
+                },
+                {
+                    "name": "PHOTOPRISM_EXPERIMENTAL",
+                    "value": "false",
+                    "description": "enables experimental features"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_CHOWN",
+                    "value": "false",
+                    "description": "disables storage permission updates on startup"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_WEBDAV",
+                    "value": "false",
+                    "description": "disables built-in WebDAV server"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_SETTINGS",
+                    "value": "false",
+                    "description": "disables settings UI and API"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_TENSORFLOW",
+                    "value": "false",
+                    "description": "disables all features depending on TensorFlow"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_FACES",
+                    "value": "false",
+                    "description": "disables facial recognition"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_CLASSIFICATION",
+                    "value": "false",
+                    "description": "disables image classification"
+                },
+                {
+                    "name": "PHOTOPRISM_DISABLE_RAW",
+                    "value": "false",
+                    "description": "disables indexing and conversion of RAW files"
+                },
+                {
+                    "name": "PHOTOPRISM_RAW_PRESETS",
+                    "value": "false",
+                    "description": "enables applying user presets when converting RAW files (reduces performance)"
+                },
+                {
+                    "name": "PHOTOPRISM_JPEG_QUALITY",
+                    "value": "85",
+                    "description": "image quality, a higher value reduces compression (25-100)"
+                },
+                {
+                    "name": "PHOTOPRISM_DETECT_NSFW",
+                    "value": "false",
+                    "description": "flag photos as private that MAY be offensive (requires TensorFlow)"
+                },
+                {
+                    "name": "PHOTOPRISM_UPLOAD_NSFW",
+                    "value": "true",
+                    "description": "allows uploads that MAY be offensive"
+                },
+                {
+                    "name": "PHOTOPRISM_DATABASE_DRIVER",
+                    "value": "mysql",
+                    "description": "use MariaDB 10.5+ or MySQL 8+ instead of SQLite for improved performance"
+                },
+                {
+                    "name": "PHOTOPRISM_DATABASE_SERVER",
+                    "value": "mariadb:3306",
+                    "description": "MariaDB or MySQL database server (hostname:port)"
+                },
+                {
+                    "name": "PHOTOPRISM_DATABASE_NAME",
+                    "value": "photoprism",
+                    "description": "MariaDB or MySQL database schema name"
+                },
+                {
+                    "name": "PHOTOPRISM_DATABASE_USER",
+                    "value": "photoprism",
+                    "description": "MariaDB or MySQL database user name"
+                },
+                {
+                    "name": "PHOTOPRISM_DATABASE_PASSWORD",
+                    "value": "insecure",
+                    "description": "MariaDB or MySQL database user password"
+                },
+                {
+                    "name": "PHOTOPRISM_SITE_CAPTION",
+                    "value": "AI-Powered Photos App"
+                },
+                {
+                    "name": "PHOTOPRISM_SITE_DESCRIPTION",
+                    "value": "",
+                    "description": "meta site description"
+                },
+                {
+                    "name": "PHOTOPRISM_SITE_AUTHOR",
+                    "value": "",
+                    "description": "meta site author"
+                }
+            ],
+            "ports": [
+                {
+                    "host": "2342",
+                    "container": "2342",
+                    "protocol": "tcp",
+                    "description": "Port used by WebUI"
+                }
+            ],
+            "volumes": [
+                {
+                    "host": "/vltos/photoprism",
+                    "container": "/photoprism/originals",
+                    "description": "original media files (photos and videos)"
+                },
+                {
+                    "host": "/vltos/photoprism/storage",
+                    "container": "/photoprism/storage",
+                    "description": "*writable* storage folder for cache, database, and sidecar files (never remove)"
+                }
+            ]
+        },
+        "mariadb": {
+            "container_name": "mariadb",
+            "restart": "unless-stopped",
+            "images": {
+                "x86_64": "mariadb:10.6",
+                "arm64": "mariadb:10.6"
+            },
+            "command": "mysqld --innodb-buffer-pool-size=512M --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120",
+            "environment": [
+                {
+                    "name": "MARIADB_AUTO_UPGRADE",
+                    "value": "1"
+                },
+                {
+                    "name": "MARIADB_INITDB_SKIP_TZINFO",
+                    "value": "1"
+                },
+                {
+                    "name": "MARIADB_DATABASE",
+                    "value": "photoprism"
+                },
+                {
+                    "name": "MARIADB_USER",
+                    "value": "photoprism"
+                },
+                {
+                    "name": "MARIADB_PASSWORD",
+                    "value": "insecure"
+                },
+                {
+                    "name": "MARIADB_ROOT_PASSWORD",
+                    "value": "insecure"
+                }
+            ],
+            "volumes": [
+                {
+                    "host": "./database",
+                    "container": "/var/lib/mysql",
+                    "description": "DO NOT REMOVE"
+                }
+            ]
+        }   
+    }
+}
