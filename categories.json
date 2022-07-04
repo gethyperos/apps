@@ -3,7 +3,7 @@
   { "name": "Torrent", "icon": "download" },
   { "name": "Network", "icon": "globe" },
   { "name": "Media", "icon": "play" },
-  { "name": "Reading", "icon": "book-outline" },
+  { "name": "Reading", "icon": "book" },
   { "name": "Development", "icon": "code" },
   { "name": "Cloud", "icon": "cloud" },
   { "name": "Finance", "icon": "wallet" },
