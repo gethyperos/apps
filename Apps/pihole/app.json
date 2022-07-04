@@ -1,0 +1,61 @@
+{
+    "App": {
+        "id": "pihole",
+        "name": "Pi-hole",
+        "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
+        "categories": [
+            "Network"
+        ],
+        "icon": "metadata/icons.png",
+        "directory": "pihole"
+    },
+    "Services": {
+        "pihole": {
+            "images": {
+                "x86_64": "pihole/pihole:latest"
+            },
+            "container_name": "pihole",
+            "environment": [
+                {
+                    "name": "TZ ",
+                    "value": "America/Chicago",
+                    "description": "Name to be displayed on webUI"
+                }
+            ],
+            "ports": [
+                {
+                    "host": "42003",
+                    "container": "42003",
+                    "protocol": "tcp",
+                    "description": "Port used by WebUI"
+                },
+                {
+                    "host": "42003",
+                    "container": "42003",
+                    "protocol": "udp",
+                    "description": "Port used by WebUI"
+                }
+            ],
+            "volumes": [
+                {
+                    "host": "/vltos/pihole",
+                    "container": "/pihole",
+                    "description": "Pihole volume"
+                },
+                {
+                    "host": "/vltos/dnsmasq.d",
+                    "container": "/piholedns",
+                    "description": "dnsmasq is both a DNS and a DHCP server"
+                }
+            ],
+            "devices": [
+                {
+                    "host": "/dev/dri",
+                    "container": "/dev/dri",
+                    "description": "GPU Device for hardware acceleration"
+                }
+            ],
+            "restart": "unless-stopped"
+        }
+    }
+}
