@@ -26,7 +26,9 @@ function enforceCategories() {
 
   if (validationResult.errors.length > 0) {
     console.error(`Invalid categories.json`)
-    console.info(validationResults.ToString())
+    validationResult.errors.forEach( err => {
+      console.info(`${err.stack ?? err.property + ' ' + err.nessage}`)
+    })
     process.exit(1)
   } else {
     console.success(`categories.json is valid`)
@@ -73,7 +75,9 @@ function generateAppIndex() {
 
       if (validationResult.errors.length > 0) {
         console.error(`Invalid app manifest: ${path}/app.json`)
-        console.log(validationResults.ToString())
+        validationResult.errors.forEach( err => {
+          console.info(`${err.stack ?? err.property + ' ' + err.nessage}`)
+        })
         process.exit(1)
       } else {
         console.success(`App "${appManifest.App.name}" is valid`)
