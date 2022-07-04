@@ -46,7 +46,7 @@
             ],
             "ports": [
                 {
-                    "host": "80",
+                    "host": "1080",
                     "container": "8080",
                     "protocol": "tcp",
                     "description": "Port used by WebUI"
