@@ -12,7 +12,9 @@
     "Services": {
         "pihole": {
             "images": {
-                "x86_64": "pihole/pihole:latest"
+                "x86_64": "pihole/pihole:latest",
+                "arm64": "pihole/pihole:latest",
+                "armhf": "pihole/pihole:latest"
             },
             "container_name": "pihole",
             "environment": [
