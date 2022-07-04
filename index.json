@@ -17,8 +17,16 @@
     "id": "photoprism",
     "name": "PhotoPrism",
     "description": "AI-Powered Photos App for the Decentralized Web.",
+
     "directory": "photoprism",
     "icon": "metadata/icon.png"
+  },
+  {
+    "id": "Pi Hole",
+    "name": "pi hole",
+    "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
+    "directory": "pihole",
+    "icon": "metadata/icons.png"
   },
   {
     "id": "prowlarr",
