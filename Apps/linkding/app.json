@@ -4,7 +4,7 @@
     "name": "linkding",
     "description": "Self-hosted bookmark service",
     "categories": [
-        "reading"
+        "Reading"
     ],
     "icon": "metadata/icon.png",
     "directory": "linkding"
