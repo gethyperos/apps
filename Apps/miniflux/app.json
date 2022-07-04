@@ -4,8 +4,8 @@
     "name": "Miniflux",
     "description": "Miniflux is a minimalist and opinionated feed reader.",
     "categories": [
-        "media",
-        "reading"
+        "Media",
+        "Reading"
     ],
     "icon": "metadata/icon.png",
     "directory": "miniflux"
