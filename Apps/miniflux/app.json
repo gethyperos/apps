@@ -20,7 +20,7 @@
             },
             "container_name": "miniflux",
             "depends_on": [
-                "db"
+                "miniflux_db"
             ],
             "environment": [
                 {
@@ -53,7 +53,7 @@
                 }
             ]
         },
-        "db": {
+        "miniflux_db": {
             "restart": "unless-stopped",
             "images": {
                 "x86_64": "postgres:latest",
