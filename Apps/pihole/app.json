@@ -6,7 +6,7 @@
         "categories": [
             "Network"
         ],
-        "icon": "metadata/icons.png",
+        "icon": "metadata/icon.png",
         "directory": "pihole"
     },
     "Services": {
