@@ -22,8 +22,8 @@
     "icon": "metadata/icon.png"
   },
   {
-    "id": "Pi Hole",
-    "name": "pi hole",
+    "id": "pihole",
+    "name": "Pi-hole",
     "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
     "directory": "pihole",
     "icon": "metadata/icons.png"
