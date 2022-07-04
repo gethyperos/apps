@@ -1,16 +1,22 @@
-
 <center>
+
+<div align="center" style="text-align:center">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
+
+</div>
 
 </center>
 
 <br>
 
-<center> <img src="https://i.imgur.com/wIOGyUQ.png"> </center>
+<p align="center">
+<img src="https://i.imgur.com/wIOGyUQ.png">
+</p>
 
 <br> 
+
 
 <p align="center">
     Collection of curated apps for HyperOS the no bullshit home-server dashboard.
