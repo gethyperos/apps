@@ -40,7 +40,7 @@
             ],
             "volumes": [
                 {
-                    "host": "/vltos/linkding/data",
+                    "host": "/hypros/configs/linkding/data",
                     "container": "/etc/linkding/data",
                     "description": "Data dir"
                 }
