@@ -25,6 +25,18 @@
     ]
   },
   {
+    "id": "linkding",
+    "name": "linkding",
+    "description": "Self-hosted bookmark service",
+    "directory": "linkding",
+    "icon": "Apps/linkding/metadata/icon.png",
+    "manifest": "Apps/linkding/app.json",
+    "metadata": "Apps/linkding/metadata/app.md",
+    "categories": [
+      "Reading"
+    ]
+  },
+  {
     "id": "miniflux",
     "name": "Miniflux",
     "description": "Miniflux is a minimalist and opinionated feed reader.",
