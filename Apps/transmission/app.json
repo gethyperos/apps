@@ -58,12 +58,12 @@
         {
           "name": "USER",
           "description": "Specify an optional username for the interface",
-          "value": "vltos"
+          "value": "hyperos"
         },
         {
           "name": "PASS",
           "description": "Specify an optional password for the interface",
-          "value": "vltos"
+          "value": "hyperos"
         },
         {
           "name": "
