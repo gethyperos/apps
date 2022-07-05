@@ -17,7 +17,7 @@
                 "arm64": "sissbruecker/linkding:latest"
             },
             "restart": "unless-stopped",
-            "container_name": "myapp_container_name",
+            "container_name": "linkding",
             "environment": [
                 {
                     "name": "LD_DISABLE_BACKGROUND_TASKS",
