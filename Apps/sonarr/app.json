@@ -24,17 +24,17 @@
       }],
       "volumes": [
         {
-          "host": "/vltos/configs/sonarr",
+          "host": "/hypros/configs/sonarr",
           "container": "/config",
           "description": "Config directory"
         },
         {
-          "host": "/vltos/media/tv",
+          "host": "/hypros/media/tv",
           "container": "/tv",
           "description": "Media directory"
         },
         {
-          "host": "/vltos/downloads",
+          "host": "/hypros/downloads",
           "container": "/downloads",
           "description": "Download directory (The same as your torrent client)"
         }

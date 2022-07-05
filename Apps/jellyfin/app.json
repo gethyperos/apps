@@ -60,13 +60,13 @@
       ],
       "volumes": [
         {
-          "host": "/vltos/media/tv",
+          "host": "/hypros/media/tv",
           "container": "/tv",
           "description": "Media directory for tv series"
         },
         {
-          "host": "/vltos/media/movie",
-          "container": "/movies",
+          "host": "/hypros/media/movie",
+          "container": "/movie",
           "description": "Media directory for movies"
         }
       ],

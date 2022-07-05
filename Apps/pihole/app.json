@@ -58,12 +58,12 @@
             ],
             "volumes": [
                 {
-                    "host": "/vltos/pihole",
+                    "host": "/hypros/pihole",
                     "container": "/pihole",
                     "description": "Pihole volume"
                 },
                 {
-                    "host": "/vltos/configs/pi-hole/dnsmasq.d",
+                    "host": "/hypros/configs/pi-hole/dnsmasq.d",
                     "container": "/piholedns",
                     "description": "dnsmasq is both a DNS and a DHCP server"
                 }
