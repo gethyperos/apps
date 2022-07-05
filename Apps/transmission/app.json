@@ -86,7 +86,8 @@
         {
           "name": "TRANSMISSION_WEB_HOME",
           "description": "UI used on front-end",
-          "value": "/flood-for-transmission/
+          "value": "/flood-for-transmission/"
+        }
       ],
       "restart": "unless-stopped"
     }
