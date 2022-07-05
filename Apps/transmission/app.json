@@ -66,9 +66,6 @@
           "value": "hyperos"
         },
         {
-          "name": "
-        },
-        {
           "name": "HOST_WHITELIST",
           "description": "Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.",
           "value": ""
