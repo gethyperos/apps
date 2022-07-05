@@ -25,23 +25,28 @@
             "environment": [
                 {
                     "name": "DATABASE_URL",
-                    "value": "postgres://miniflux:secret@db/miniflux?sslmode=disable"
+                    "value": "postgres://miniflux:hyperos@hypros-miniflux_db/miniflux?sslmode=disable",
+                    "description": "PostgreSQL connection URL"
                 },
                 {
                     "name": "RUN_MIGRATIONS",
-                    "value": "1"
+                    "value": "1",
+                    "description": "Allows miniflux to automatically migrate data to database"
                 },
                 {
                     "name": "CREATE_ADMIN",
-                    "value": "1"
+                    "value": "1",
+                    "description": "Automatically creates admin account"
                 },
                 {
                     "name": "ADMIN_USERNAME",
-                    "value": "hyperos"
+                    "value": "hyperos",
+                    "description": "Username for the admin account"
                 },
                 {
                     "name": "ADMIN_PASSWORD",
-                    "value": "hyperos"
+                    "value": "hyperos",
+                    "description": "Password for the admin account"
                 }
             ],
             "ports": [
