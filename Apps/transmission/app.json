@@ -66,6 +66,9 @@
           "value": "vltos"
         },
         {
+          "name": "
+        },
+        {
           "name": "HOST_WHITELIST",
           "description": "Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.",
           "value": ""
@@ -79,7 +82,11 @@
           "name": "PGID",
           "description": "Ensure any volume directories on the host are owned by the same group",
           "value": "1000"
-        }
+        },
+        {
+          "name": "TRANSMISSION_WEB_HOME",
+          "description": "UI used on front-end",
+          "value": "/flood-for-transmission/
       ],
       "restart": "unless-stopped"
     }
