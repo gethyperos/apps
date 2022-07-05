@@ -73,8 +73,8 @@
             ],
             "volumes": [
                 {
-                    "container": "/hypros/configs/miniflux/db",
-                    "host": "/var/lib/postgresql/data"
+                    "host": "/hypros/configs/miniflux/db",
+                    "container": "/var/lib/postgresql/data"
                 }
             ]
         }
