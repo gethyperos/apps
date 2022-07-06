@@ -6,6 +6,7 @@
     "categories": [
       "Files", "Torrent"
     ],
+    "webport": "9091",
     "icon": "metadata/icon.png",
     "directory": "transmission"
   },

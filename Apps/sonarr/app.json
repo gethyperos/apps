@@ -6,6 +6,7 @@
     "categories": [
       "Media", "Torrent"
     ],
+    "webport": "8989",
     "icon": "metadata/icon.png",
     "directory": "sonarr"
   },

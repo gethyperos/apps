@@ -6,6 +6,7 @@
         "categories": [
             "Media"
         ],
+        "webport": "2342",
         "icon": "metadata/icon.png",
         "directory": "photoprism"
     },

@@ -7,6 +7,7 @@
             "Media",
             "Torrent"
         ],
+        "webport": "7878",
         "icon": "metadata/icon.png",
         "directory": "radarr"
     },

@@ -8,10 +8,14 @@
       "type": "object",
       "description": "HyperOS App specifications",
       "properties": {
+        "webport": {
+          "type": "string",
+          "description": "Default port for web interface (if any)"
+        },
         "id": {
           "type": "string",
           "description": "App Unique Identifier",
-          "patter": "^[a-z0-9-_]+$"
+          "pattern": "^[a-z0-9-_]+$"
         },
         "name": {
           "type": "string",
@@ -55,7 +59,7 @@
           "id": "welcome",
           "name": "HyperOS Example app",
           "description": "HyperOS App Template",
-          "categories": ["example"],
+          "categories": ["Example"],
           "icon": "example.png",
           "directory": "welcome"
         }

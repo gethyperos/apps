@@ -6,6 +6,7 @@
     "categories": [
       "Media"
     ],
+    "webport": "8096",
     "icon": "metadata/icon.png",
     "directory": "jellyfin"
   },

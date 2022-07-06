@@ -6,6 +6,7 @@
     "categories": [
       "Files", "Torrent"
     ],
+    "webport": "8112",
     "icon": "metadata/icon.png",
     "directory": "deluge"
   },

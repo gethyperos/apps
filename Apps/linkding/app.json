@@ -6,6 +6,7 @@
     "categories": [
         "Reading"
     ],
+    "webport": "9090",
     "icon": "metadata/icon.png",
     "directory": "linkding"
     },

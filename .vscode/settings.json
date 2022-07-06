@@ -14,11 +14,10 @@
     }
   ],
   "files.exclude": {
-    "**/node_modules": true,
-    "**/schemas": true,
     ".vscode": true,
-    "yarn.lock": true,
+    "**/node_modules": true,
+    "index.js": true,
     "package-lock.json": true,
-    "index.js": true
+    "yarn.lock": true
   }
 }

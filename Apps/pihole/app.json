@@ -6,6 +6,7 @@
         "categories": [
             "Network"
         ],
+        "webport": "2092",
         "icon": "metadata/icon.png",
         "directory": "pihole"
     },

@@ -6,6 +6,7 @@
     "categories": [
       "Torrent"
     ],
+    "webport": "9696",
     "icon": "metadata/icon.png",
     "directory": "prowlarr"
   },
