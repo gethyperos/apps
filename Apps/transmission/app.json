@@ -39,12 +39,12 @@
       ],
       "volumes": [
         {
-          "host": "/hypros/configs/transmission",
+          "host": "/hypros/AppData/transmission/config",
           "container": "/config",
           "description": "Config Directory"
         },
         {
-          "host": "/hypros/downloads",
+          "host": "/hypros/Downloads",
           "container": "/downloads",
           "description": "Downloads Directory"
         }
@@ -82,8 +82,9 @@
         },
         {
           "name": "TRANSMISSION_WEB_HOME",
-          "description": "UI used on front-end",
-          "value": "/flood-for-transmission/"
+          "value": "/flood-for-transmission/",
+          "options": ["/combustion-release/", "/transmission-web-control/", "/kettu/", "/flood-for-transmission/", "/transmissionic/"],
+          "description": "UI used on front-end"
         }
       ],
       "restart": "unless-stopped"

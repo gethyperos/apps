@@ -25,7 +25,7 @@
             "environment": [
                 {
                     "name": "DATABASE_URL",
-                    "value": "postgres://miniflux:hyperos@hypros-miniflux_db/miniflux?sslmode=disable",
+                    "value": "postgres://miniflux:hyperos@miniflux_db/miniflux?sslmode=disable",
                     "description": "PostgreSQL connection URL"
                 },
                 {
@@ -69,17 +69,20 @@
             "environment": [
                 {
                     "name": "POSTGRES_USER",
-                    "value": "miniflux"
+                    "value": "miniflux",
+                    "description": "Database default username and database name"
                 },
                 {
                     "name": "POSTGRES_PASSWORD",
-                    "value": "hyperos"
+                    "value": "hyperos",
+                    "description": "Database default user password"
                 }
             ],
             "volumes": [
                 {
-                    "host": "/hypros/configs/miniflux/db",
-                    "container": "/var/lib/postgresql/data"
+                    "host": "/hypros/AppData/miniflux/database",
+                    "container": "/var/lib/postgresql/data",
+                    "description": "Database files location *never empty"
                 }
             ]
         }

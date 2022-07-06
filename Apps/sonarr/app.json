@@ -24,17 +24,17 @@
       }],
       "volumes": [
         {
-          "host": "/hypros/configs/sonarr",
+          "host": "/hypros/AppData/sonarr/config",
           "container": "/config",
           "description": "Config directory"
         },
         {
-          "host": "/hypros/media/tv",
+          "host": "/hypros/Media/TV",
           "container": "/tv",
           "description": "Media directory"
         },
         {
-          "host": "/hypros/downloads",
+          "host": "/hypros/Downloads",
           "container": "/downloads",
           "description": "Download directory (The same as your torrent client)"
         }

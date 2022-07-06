@@ -21,7 +21,7 @@
                 {
                     "name": "TZ",
                     "value": "America/Chicago",
-                    "description": "Name to be displayed on webUI"
+                    "description": "Timezone"
                 },
                 {
                     "name": "WEBPASSWORD",
@@ -58,12 +58,12 @@
             ],
             "volumes": [
                 {
-                    "host": "/hypros/pihole",
+                    "host": "/hypros/AppData/pihole",
                     "container": "/pihole",
                     "description": "Pihole volume"
                 },
                 {
-                    "host": "/hypros/configs/pi-hole/dnsmasq.d",
+                    "host": "/hypros/AppData/pihole/dnsmasq.d",
                     "container": "/piholedns",
                     "description": "dnsmasq is both a DNS and a DHCP server"
                 }

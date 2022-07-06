@@ -144,13 +144,13 @@
                 },
                 {
                     "name": "PHOTOPRISM_SITE_DESCRIPTION",
-                    "value": "",
+                    "value": "HyperOS - Photoprism",
                     "description": "meta site description"
                 },
                 {
                     "name": "PHOTOPRISM_SITE_AUTHOR",
-                    "value": "",
-                    "description": "meta site author"
+                    "value": "HyperOS",
+                    "description": "Site author"
                 }
             ],
             "ports": [
@@ -211,9 +211,9 @@
             ],
             "volumes": [
                 {
-                    "host": "./database",
+                    "host": "/hypros/AppData/photoprism/database",
                     "container": "/var/lib/mysql",
-                    "description": "DO NOT REMOVE"
+                    "description": "Database files location *never empty"
                 }
             ]
         }   

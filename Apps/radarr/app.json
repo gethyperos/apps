@@ -51,19 +51,19 @@
             ],
             "volumes": [
                 {
-                    "host": "/hypros/configs/radarr",
+                    "host": "/hypros/AppData/radarr/config",
                     "container": "/config",
                     "description": "Place to save our configuration files"
                 },
                 {
-                    "host": "/hypros/media/movies",
+                    "host": "/hypros/Media/Movies",
                     "container": "/movies",
                     "description": "Place to save your media"
                 },
                 {
-                    "host": "/hypros/downloads",
+                    "host": "/hypros/Downloads",
                     "container": "/downloads",
-                    "description": "Place to save your media while downloading"
+                    "description": "Download directory (The same as your torrent client)"
                 }
             ]
         }
