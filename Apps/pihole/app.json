@@ -1,78 +1,77 @@
 {
-    "App": {
-        "id": "pihole",
-        "name": "Pi-hole",
-        "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
-        "categories": [
-            "Network"
-        ],
-        "webport": "2092",
-        "icon": "metadata/icon.png",
-        "directory": "pihole"
-    },
-    "Services": {
-        "pihole": {
-            "images": {
-                "x86_64": "pihole/pihole:latest",
-                "arm64": "pihole/pihole:latest",
-                "armhf": "pihole/pihole:latest"
-            },
-            "container_name": "pihole",
-            "environment": [
-                {
-                    "name": "TZ",
-                    "value": "America/Chicago",
-                    "description": "Timezone"
-                },
-                {
-                    "name": "WEBPASSWORD",
-                    "value": "hyperos",
-                    "description": "Password for WebUI"
-                }
-                
-            ],
-            "ports": [
-                {
-                    "host": "53",
-                    "container": "53",
-                    "protocol": "tcp",
-                    "description": "DNS Service port"
-                },
-                {
-                    "host": "53",
-                    "container": "53",
-                    "protocol": "udp",
-                    "description": "DNS Service port"
-                },
-                {
-                    "host": "67",
-                    "container": "67",
-                    "protocol": "udp",
-                    "description": "Only required if you are using Pi-hole as your DHCP server"
-                },
-                {
-                    "host": "2092",
-                    "container": "80",
-                    "protocol": "tcp",
-                    "description": "Web Interface port"
-                }
-            ],
-            "volumes": [
-                {
-                    "host": "/hypros/AppData/pihole",
-                    "container": "/pihole",
-                    "description": "Pihole volume"
-                },
-                {
-                    "host": "/hypros/AppData/pihole/dnsmasq.d",
-                    "container": "/piholedns",
-                    "description": "dnsmasq is both a DNS and a DHCP server"
-                }
-            ],
-            "cap_add": [
-                "NET_ADMIN"
-            ],
-            "restart": "unless-stopped"
+  "App": {
+    "id": "pihole",
+    "name": "Pi-hole",
+    "description": "Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers",
+    "categories": [
+      "Network"
+    ],
+    "webport": "2092",
+    "icon": "metadata/icon.png",
+    "directory": "pihole"
+  },
+  "Services": {
+    "pihole": {
+      "images": {
+        "x86_64": "pihole/pihole:latest",
+        "arm64": "pihole/pihole:latest",
+        "armhf": "pihole/pihole:latest"
+      },
+      "container_name": "pihole",
+      "environment": [
+        {
+          "name": "TZ",
+          "value": "America/Chicago",
+          "description": "Timezone"
+        },
+        {
+          "name": "WEBPASSWORD",
+          "value": "hyperos",
+          "description": "Password for WebUI"
         }
+      ],
+      "ports": [
+        {
+          "host": "53",
+          "container": "53",
+          "protocol": "tcp",
+          "description": "DNS Service port"
+        },
+        {
+          "host": "53",
+          "container": "53",
+          "protocol": "udp",
+          "description": "DNS Service port"
+        },
+        {
+          "host": "67",
+          "container": "67",
+          "protocol": "udp",
+          "description": "Only required if you are using Pi-hole as your DHCP server"
+        },
+        {
+          "host": "2092",
+          "container": "80",
+          "protocol": "tcp",
+          "description": "Web Interface port"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/hypros/AppData/pihole",
+          "container": "/pihole",
+          "description": "Pihole volume"
+        },
+        {
+          "host": "/hypros/AppData/pihole/dnsmasq.d",
+          "container": "/piholedns",
+          "description": "dnsmasq is both a DNS and a DHCP server"
+        }
+      ],
+      "cap_add": [
+        "NET_ADMIN"
+      ],
+      "restart": "unless-stopped"
     }
+  }
 }

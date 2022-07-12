@@ -1,51 +1,51 @@
-{ 
-    "App": {
+{
+  "App": {
     "id": "linkding",
     "name": "linkding",
     "description": "Self-hosted bookmark service",
     "categories": [
-        "Reading"
+      "Reading"
     ],
     "webport": "9090",
     "icon": "metadata/icon.png",
     "directory": "linkding"
-    },
-    "Services": {
-        "linkding": {
-            "images": {
-                "x86_64": "sissbruecker/linkding:latest",
-                "armhf": "sissbruecker/linkding:latestt",
-                "arm64": "sissbruecker/linkding:latest"
-            },
-            "restart": "unless-stopped",
-            "container_name": "linkding",
-            "environment": [
-                {
-                    "name": "LD_DISABLE_BACKGROUND_TASKS",
-                    "value": "False",
-                    "description": "Option to disable background tasks"
-                },
-                {
-                    "name": "LD_DISABLE_URL_VALIDATION",
-                    "value": "False",
-                    "description": "Option to disable URL validation for bookmarks completely"
-                }
-            ],
-            "ports": [
-                {
-                    "host": "9090",
-                    "container": "9090",
-                    "protocol": "tcp",
-                    "description": "Port used for the web app"
-                }
-            ],
-            "volumes": [
-                {
-                    "host": "/hypros/AppData/linkding",
-                    "container": "/etc/linkding/data",
-                    "description": "Data dir"
-                }
-            ]
+  },
+  "Services": {
+    "linkding": {
+      "images": {
+        "x86_64": "sissbruecker/linkding:latest",
+        "armhf": "sissbruecker/linkding:latestt",
+        "arm64": "sissbruecker/linkding:latest"
+      },
+      "restart": "unless-stopped",
+      "container_name": "linkding",
+      "environment": [
+        {
+          "name": "LD_DISABLE_BACKGROUND_TASKS",
+          "value": "False",
+          "description": "Option to disable background tasks"
+        },
+        {
+          "name": "LD_DISABLE_URL_VALIDATION",
+          "value": "False",
+          "description": "Option to disable URL validation for bookmarks completely"
         }
+      ],
+      "ports": [
+        {
+          "host": "9090",
+          "container": "9090",
+          "protocol": "tcp",
+          "description": "Port used for the web app"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/hypros/AppData/linkding",
+          "container": "/etc/linkding/data",
+          "description": "Data dir"
+        }
+      ]
     }
+  }
 }

@@ -18,7 +18,8 @@
         "arm64": "lscr.io/linuxserver/plex:latest"
       },
       "container_name": "plex",
-      "environment": [{
+      "environment": [
+        {
           "name": "PUID",
           "value": "1000",
           "description": "User ID"

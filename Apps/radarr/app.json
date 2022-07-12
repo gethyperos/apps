@@ -1,72 +1,72 @@
 {
-    "App": {
-        "id": "radarr",
-        "name": "Radarr",
-        "description": "Radarr is a movie collection manager",
-        "categories": [
-            "Media",
-            "Torrent"
-        ],
-        "webport": "7878",
-        "icon": "metadata/icon.png",
-        "directory": "radarr"
-    },
-    "Services": {
-        "radarr": {
-            "images": {
-                "x86_64": "linuxserver/radarr:nightly",
-                "armhf": "linuxserver/radarr:latest",
-                "arm64": "linuxserver/radarr:latest"
-            },
-            "restart": "unless-stopped",
-            "container_name": "radarr",
-            "environment": [
-                {
-                    "name": "PUID",
-                    "value": "1000",
-                    "description": "Ensure any volume directories on the host are owned by the same user"
-                },
-                {
-                    "name": "PGID",
-                    "value": "1000",
-                    "description": "Ensure any volume directories on the host are owned by the same group"
-                },
-                {
-                    "name": "TZ",
-                    "value": "America/Sao_Paulo",
-                    "description": "Timezone"
-                },
-                {
-                    "name": "UMASK_SET",
-                    "value": "022",
-                    "description": "Define umask settings for file permissions"
-                }
-            ],
-            "ports": [
-                {
-                    "host": "7878",
-                    "container": "7878",
-                    "protocol": "tcp",
-                    "description": "Port used by WebUI"
-                }
-            ],
-            "volumes": [
-                {
-                    "host": "/hypros/AppData/radarr/config",
-                    "container": "/config",
-                    "description": "Place to save our configuration files"
-                },
-                {
-                    "host": "/hypros/Media/Movies",
-                    "container": "/movies",
-                    "description": "Place to save your media"
-                },
-                {
-                    "host": "/hypros/Downloads",
-                    "container": "/downloads",
-                    "description": "Download directory (The same as your torrent client)"
-                }
-            ]
+  "App": {
+    "id": "radarr",
+    "name": "Radarr",
+    "description": "Radarr is a movie collection manager",
+    "categories": [
+      "Media",
+      "Torrent"
+    ],
+    "webport": "7878",
+    "icon": "metadata/icon.png",
+    "directory": "radarr"
+  },
+  "Services": {
+    "radarr": {
+      "images": {
+        "x86_64": "linuxserver/radarr:nightly",
+        "armhf": "linuxserver/radarr:latest",
+        "arm64": "linuxserver/radarr:latest"
+      },
+      "restart": "unless-stopped",
+      "container_name": "radarr",
+      "environment": [
+        {
+          "name": "PUID",
+          "value": "1000",
+          "description": "Ensure any volume directories on the host are owned by the same user"
+        },
+        {
+          "name": "PGID",
+          "value": "1000",
+          "description": "Ensure any volume directories on the host are owned by the same group"
+        },
+        {
+          "name": "TZ",
+          "value": "America/Sao_Paulo",
+          "description": "Timezone"
+        },
+        {
+          "name": "UMASK_SET",
+          "value": "022",
+          "description": "Define umask settings for file permissions"
         }
+      ],
+      "ports": [
+        {
+          "host": "7878",
+          "container": "7878",
+          "protocol": "tcp",
+          "description": "Port used by WebUI"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/hypros/AppData/radarr/config",
+          "container": "/config",
+          "description": "Place to save our configuration files"
+        },
+        {
+          "host": "/hypros/Media/Movies",
+          "container": "/movies",
+          "description": "Place to save your media"
+        },
+        {
+          "host": "/hypros/Downloads",
+          "container": "/downloads",
+          "description": "Download directory (The same as your torrent client)"
+        }
+      ]
     }
+  }
 }

@@ -18,7 +18,8 @@
         "arm64": "lscr.io/linuxserver/jellyfin:latest"
       },
       "container_name": "jellyfin",
-      "environment": [{
+      "environment": [
+        {
           "name": "TZ",
           "value": "America/New_York",
           "description": "Timezone"

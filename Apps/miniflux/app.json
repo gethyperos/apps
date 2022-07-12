@@ -1,91 +1,91 @@
-{ 
-    "App": {
+{
+  "App": {
     "id": "miniflux",
     "name": "Miniflux",
     "description": "Miniflux is a minimalist and opinionated feed reader.",
     "categories": [
-        "Media",
-        "Reading"
+      "Media",
+      "Reading"
     ],
     "webport": "1080",
     "icon": "metadata/icon.png",
     "directory": "miniflux"
-    },
-        "Services": {
-        "miniflux": {
-            "restart": "unless-stopped",
-            "images": {
-                "x86_64": "miniflux/miniflux:latest",
-                "armhf": "miniflux/miniflux:latest",
-                "arm64": "miniflux/miniflux:latest"
-            },
-            "container_name": "miniflux",
-            "depends_on": [
-                "miniflux_db"
-            ],
-            "environment": [
-                {
-                    "name": "DATABASE_URL",
-                    "value": "postgres://miniflux:hyperos@miniflux_db/miniflux?sslmode=disable",
-                    "description": "PostgreSQL connection URL"
-                },
-                {
-                    "name": "RUN_MIGRATIONS",
-                    "value": "1",
-                    "description": "Allows miniflux to automatically migrate data to database"
-                },
-                {
-                    "name": "CREATE_ADMIN",
-                    "value": "1",
-                    "description": "Automatically creates admin account"
-                },
-                {
-                    "name": "ADMIN_USERNAME",
-                    "value": "hyperos",
-                    "description": "Username for the admin account"
-                },
-                {
-                    "name": "ADMIN_PASSWORD",
-                    "value": "hyperos",
-                    "description": "Password for the admin account"
-                }
-            ],
-            "ports": [
-                {
-                    "host": "1080",
-                    "container": "8080",
-                    "protocol": "tcp",
-                    "description": "Port used by WebUI"
-                }
-            ]
+  },
+  "Services": {
+    "miniflux": {
+      "restart": "unless-stopped",
+      "images": {
+        "x86_64": "miniflux/miniflux:latest",
+        "armhf": "miniflux/miniflux:latest",
+        "arm64": "miniflux/miniflux:latest"
+      },
+      "container_name": "miniflux",
+      "depends_on": [
+        "miniflux_db"
+      ],
+      "environment": [
+        {
+          "name": "DATABASE_URL",
+          "value": "postgres://miniflux:hyperos@miniflux_db/miniflux?sslmode=disable",
+          "description": "PostgreSQL connection URL"
         },
-        "miniflux_db": {
-            "restart": "unless-stopped",
-            "images": {
-                "x86_64": "postgres:latest",
-                "armhf": "postgres:latest",
-                "arm64": "postgres:latest"
-            },
-            "container_name": "miniflux_db",
-            "environment": [
-                {
-                    "name": "POSTGRES_USER",
-                    "value": "miniflux",
-                    "description": "Database default username and database name"
-                },
-                {
-                    "name": "POSTGRES_PASSWORD",
-                    "value": "hyperos",
-                    "description": "Database default user password"
-                }
-            ],
-            "volumes": [
-                {
-                    "host": "/hypros/AppData/miniflux/database",
-                    "container": "/var/lib/postgresql/data",
-                    "description": "Database files location *never empty"
-                }
-            ]
+        {
+          "name": "RUN_MIGRATIONS",
+          "value": "1",
+          "description": "Allows miniflux to automatically migrate data to database"
+        },
+        {
+          "name": "CREATE_ADMIN",
+          "value": "1",
+          "description": "Automatically creates admin account"
+        },
+        {
+          "name": "ADMIN_USERNAME",
+          "value": "hyperos",
+          "description": "Username for the admin account"
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "value": "hyperos",
+          "description": "Password for the admin account"
         }
+      ],
+      "ports": [
+        {
+          "host": "1080",
+          "container": "8080",
+          "protocol": "tcp",
+          "description": "Port used by WebUI"
+        }
+      ]
+    },
+    "miniflux_db": {
+      "restart": "unless-stopped",
+      "images": {
+        "x86_64": "postgres:latest",
+        "armhf": "postgres:latest",
+        "arm64": "postgres:latest"
+      },
+      "container_name": "miniflux_db",
+      "environment": [
+        {
+          "name": "POSTGRES_USER",
+          "value": "miniflux",
+          "description": "Database default username and database name"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "value": "hyperos",
+          "description": "Database default user password"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "/hypros/AppData/miniflux/database",
+          "container": "/var/lib/postgresql/data",
+          "description": "Database files location *never empty"
+        }
+      ]
     }
+  }
 }
