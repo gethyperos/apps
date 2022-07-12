@@ -4,7 +4,8 @@
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
     "categories": [
-      "Media", "Torrent"
+      "Media",
+      "Torrent"
     ],
     "webport": "8989",
     "icon": "metadata/icon.png",
@@ -18,11 +19,13 @@
         "x86_64": "linuxserver/sonarr:latest"
       },
       "container_name": "sonarr",
-      "ports": [{
-        "container": "8989",
-        "host": "8989",
-        "description": "Web Interface port"
-      }],
+      "ports": [
+        {
+          "container": "8989",
+          "host": "8989",
+          "description": "Web Interface port"
+        }
+      ],
       "volumes": [
         {
           "host": "/hypros/AppData/sonarr/config",

@@ -74,6 +74,18 @@
     ]
   },
   {
+    "id": "plex",
+    "name": "plex",
+    "description": "Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.",
+    "directory": "plex",
+    "icon": "Apps/plex/metadata/icon.png",
+    "manifest": "Apps/plex/app.json",
+    "metadata": "Apps/plex/metadata/app.md",
+    "categories": [
+      "Media"
+    ]
+  },
+  {
     "id": "prowlarr",
     "name": "Prowlarr",
     "description": "prowlarr is a indexer manager/proxy/",
@@ -90,10 +102,16 @@
     "name": "Radarr",
     "description": "Radarr is a movie collection manager",
     "directory": "radarr",
-    "icon": "Apps/radarr/metadata/icon.png"
+    "icon": "Apps/radarr/metadata/icon.png",
+    "manifest": "Apps/radarr/app.json",
+    "metadata": "Apps/radarr/metadata/app.md",
+    "categories": [
+      "Media",
+      "Torrent"
+    ]
   },
   {
-    "id": "Sonarr",
+    "id": "sonarr",
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
     "directory": "sonarr",

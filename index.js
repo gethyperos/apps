@@ -95,8 +95,8 @@ function generateAppIndex() {
         console.success(`App "${appManifest.App.name}" is valid`)
       }
 
-      appManifest.directory = path
-      fs.writeFileSync(`./Apps/${path}/app.json`, appManifest)
+      appManifest.App.directory = path
+      fs.writeFileSync(`Apps/${path}/app.json`, JSON.stringify(appManifest, null, 2))
     })
 
     writeJson( './index.json', Apps.sort() )

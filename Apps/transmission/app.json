@@ -4,7 +4,8 @@
     "name": "Transmission",
     "description": "Transmission is a cross-platform BitTorrent client",
     "categories": [
-      "Files", "Torrent"
+      "Files",
+      "Torrent"
     ],
     "webport": "9091",
     "icon": "metadata/icon.png",
@@ -19,23 +20,23 @@
         "arm64": "linuxserver/transmission:arm64-latest"
       },
       "ports": [
-        { 
-          "container": "9091", 
-          "host": "9091", 
-          "protocol": "tcp", 
-          "description": "Web Interface port" 
+        {
+          "container": "9091",
+          "host": "9091",
+          "protocol": "tcp",
+          "description": "Web Interface port"
         },
-        { 
-          "container": "51413", 
-          "host": "51413", 
-          "protocol": "tcp", 
-          "description": "Torrent Port TCP" 
+        {
+          "container": "51413",
+          "host": "51413",
+          "protocol": "tcp",
+          "description": "Torrent Port TCP"
         },
-        { 
-          "container": "51413", 
-          "host": "51413", 
-          "protocol": "udp", 
-          "description": "Torrent Port UDP" 
+        {
+          "container": "51413",
+          "host": "51413",
+          "protocol": "udp",
+          "description": "Torrent Port UDP"
         }
       ],
       "volumes": [
@@ -71,7 +72,7 @@
           "description": "Specify an optional list of comma separated ip whitelist. Fills rpc-whitelist setting.",
           "value": ""
         },
-        { 
+        {
           "name": "PUID",
           "description": "Ensure any volume directories on the host are owned by the same user",
           "value": "1000"
@@ -84,7 +85,13 @@
         {
           "name": "TRANSMISSION_WEB_HOME",
           "value": "/flood-for-transmission/",
-          "options": ["/combustion-release/", "/transmission-web-control/", "/kettu/", "/flood-for-transmission/", "/transmissionic/"],
+          "options": [
+            "/combustion-release/",
+            "/transmission-web-control/",
+            "/kettu/",
+            "/flood-for-transmission/",
+            "/transmissionic/"
+          ],
           "description": "UI used on front-end"
         }
       ],
