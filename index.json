@@ -90,7 +90,7 @@
     "name": "Radarr",
     "description": "Radarr is a movie collection manager",
     "directory": "radarr",
-    "icon": "metadata/icon.png"
+    "icon": "Apps/radarr/metadata/icon.png"
   },
   {
     "id": "Sonarr",
