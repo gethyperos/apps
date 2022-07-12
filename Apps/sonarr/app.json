@@ -1,6 +1,6 @@
 {
   "App": {
-    "id": "Sonarr",
+    "id": "sonarr",
     "name": "Sonarr",
     "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users.",
     "categories": [
