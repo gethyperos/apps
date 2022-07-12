@@ -1,15 +1,15 @@
 [
-  { "name": "Files", "icon": "folder" },
-  { "name": "Torrent", "icon": "download" },
-  { "name": "Network", "icon": "globe" },
-  { "name": "Media", "icon": "play" },
-  { "name": "Reading", "icon": "book" },
-  { "name": "Development", "icon": "code" },
-  { "name": "Cloud", "icon": "cloud" },
-  { "name": "Finance", "icon": "wallet" },
-  { "name": "Games", "icon": "game-controller" },
-  { "name": "Learning", "icon": "school" },
-  { "name": "Notes", "icon": "create" },
-  { "name": "Home Automation", "icon": "house" },
-  { "name": "Utility", "icon": "color-wand" }
+  { "name": "Files", "icon": "IoFolderOpenOutline" },
+  { "name": "Torrent", "icon": "IoDownloadOutline" },
+  { "name": "Network", "icon": "IoWifiOutline" },
+  { "name": "Media", "icon": "IoPlayOutline" },
+  { "name": "Reading", "icon": "IoBookOutline" },
+  { "name": "Development", "icon": "IoCode" },
+  { "name": "Cloud", "icon": "IoCloudOutline" },
+  { "name": "Finance", "icon": "IoWalletOutline" },
+  { "name": "Games", "icon": "IoGameControllerOutline" },
+  { "name": "Learning", "icon": "IoSchoolOutline" },
+  { "name": "Notes", "icon": "IoCreateOutline" },
+  { "name": "Home Automation", "icon": "IoHomeOutline" },
+  { "name": "Utility", "icon": "IoColorWandOutline" }
 ]
