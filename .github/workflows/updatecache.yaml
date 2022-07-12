@@ -16,3 +16,8 @@ jobs:
         with:
           url: |
             https://cdn.jsdelivr.net/gh/gethyperos/apps@master/index.json
+            - uses: gacts/purge-jsdelivr-cache@v1
+      - uses: gacts/purge-jsdelivr-cache@v1
+        with:
+          url: |
+            https://cdn.jsdelivr.net/gh/gethyperos/apps@master/categories.json
