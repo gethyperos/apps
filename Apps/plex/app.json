@@ -48,7 +48,7 @@
       ],
       "volumes": [
         {
-          "host": "/hypros/AppData/Plex",
+          "host": "/hypros/AppData/plex/config",
           "container": "/config",
           "description": "Plex library location. This can grow very large, 50gb+ is likely for a large collection."
         },
