@@ -1,4 +1,6 @@
-<img src="screenshot.png" />
+<Slide>
+    <Image appId="prowlarr" path="metadata/screenshot.png" />
+</Slide>
 
 
 Prowlarr supports management of both Torrent Trackers and Usenet Indexers. It integrates seamlessly with:

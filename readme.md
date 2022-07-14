@@ -68,7 +68,8 @@ This file is displayed on your app page under HyperOS web interface, it should c
 
 HyperOS parses some extra tags to better fit the appStore:
 
- - `<slide> <slide>` The slide tag accepts multiple images as content, drawing the horizontal image slide (usually shown as first element on appstore)
+ - `<Gallery> </Gallery>` The gallery tag accepts multiple images as content, drawing the horizontal image slide (usually shown as first element on appstore)
+ - `<Image appId="myapp" path="metadata/screenshot.jpg"/>` Image requires the appId and image path as props, path is relative to app.json
     
 </details>
     

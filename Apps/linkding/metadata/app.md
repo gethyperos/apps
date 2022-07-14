@@ -1,4 +1,6 @@
-<img src="screenshot.png"/>
+<Slide>
+    <Image appId="linkding" path="metadata/screenshot.png" />
+</Slide>
 
 linkding is a simple bookmark service that you can host yourself.
 It's designed be to be minimal, fast, and easy to set up using Docker.

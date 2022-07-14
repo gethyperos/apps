@@ -1,5 +1,6 @@
-
-<img src="screenshot.png"/>
+<Slide>
+    <Image appId="photoprism" path="metadata/screenshot.png" />
+</Slide>
 
 PhotoPrism® is an AI-Powered Photos App for the Decentralized Web.
 
