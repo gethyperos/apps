@@ -1,4 +1,4 @@
-<img src="screenshot.png">
+<img src="screenshot.png"/>
 
 linkding is a simple bookmark service that you can host yourself.
 It's designed be to be minimal, fast, and easy to set up using Docker.

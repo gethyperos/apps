@@ -1,5 +1,5 @@
 
-<img src="images/dashboard.png">
+<img src="images/dashboard.png"/>
 
 Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers without requiring any setup on individual devices. It is able to block ads on any network device (e.g. smart appliances), and, unlike browser add-ons, Pi-hole blocks ads on any type of software.
 

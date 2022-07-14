@@ -1,5 +1,5 @@
 
-<img src="screenshot.png">
+<img src="screenshot.png"/>
 
 PhotoPrism® is an AI-Powered Photos App for the Decentralized Web.
 

@@ -1,7 +1,7 @@
 
 <table>
   <td>
-    <tr><img src="screenshot.png"></tr>
+    <tr><img src="screenshot.png"/></tr>
     <tr>Sonarr home dashboard</tr>
   </td>
 </table>

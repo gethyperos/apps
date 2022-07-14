@@ -1,5 +1,5 @@
 
-<img src="screenshot.png">
+<img src="screenshot.png"/>
 
 Miniflux is a minimalist and opinionated feed reader.
 

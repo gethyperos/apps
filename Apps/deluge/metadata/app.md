@@ -1,7 +1,7 @@
 
 
 <center>
-<img src="screenshot.png">
+<img src="screenshot.png" />
 </center>
 
 
