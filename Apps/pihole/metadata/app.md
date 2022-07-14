@@ -3,27 +3,6 @@
 
 Pi-hole is a general purpose network-wide ad-blocker that protects your network from ads and trackers without requiring any setup on individual devices. It is able to block ads on any network device (e.g. smart appliances), and, unlike browser add-ons, Pi-hole blocks ads on any type of software.
 
-<table>
-<thead>
- 
-</thead>
-<tbody>
-  <tr>
-    <td><img src="images/login.png"/></th>
-    <td>
-      <h2>Login</h2>
-      Login in to enjoy your privacy.</th>
-  </tr>
-
-  <tr>
-    <td><img src="images/dashboard.png"/></th>
-    <td>
-      <h2>Dashboard</h2>
-      Check all the use & blocked ad's</th>
-  </tr>
-</tbody>
-</table>
-
 # The Pi-hole
 is a DNS sinkhole that protects your devices from unwanted content, without installing any client-side software.
 
