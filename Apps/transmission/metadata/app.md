@@ -1,9 +1,6 @@
-
-
-<center>
-<img src="screenshot.jpg"/>
-</center>
-
+<Slide>
+    <Image appId="transmission" path="metadata/screenshot.jpg" />
+</Slide>
 
 
 

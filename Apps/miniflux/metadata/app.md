@@ -1,5 +1,6 @@
-
-<img src="screenshot.png"/>
+<Slide>
+    <Image appId="miniflux" path="metadata/screenshot.png" />
+</Slide>
 
 Miniflux is a minimalist and opinionated feed reader.
 
